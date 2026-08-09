@@ -1,0 +1,26 @@
+# Python
+__pycache__/
+*.py[cod]
+.venv/
+*.egg-info/
+.pytest_cache/
+.ruff_cache/
+
+# Secrets
+.env
+.env.local
+.venv
+.vscode
+/.vscode
+/.venv
+
+# Node (widget/, web/)
+node_modules/
+dist/
+.next/
+
+# Ingestion output — regenerable, noisy diffs
+data/chunks_preview.md
+
+# OS
+.DS_Store
