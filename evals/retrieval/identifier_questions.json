@@ -1,0 +1,2074 @@
+[
+  {
+    "id": "bare-ACCOUNT_ID",
+    "style": "bare",
+    "query": "ACCOUNT_ID",
+    "identifier": "ACCOUNT_ID",
+    "gold_chunk_uid": "93834d3b6dafda41"
+  },
+  {
+    "id": "nat-ACCOUNT_ID",
+    "style": "natural",
+    "query": "What does ACCOUNT_ID configure?",
+    "identifier": "ACCOUNT_ID",
+    "gold_chunk_uid": "93834d3b6dafda41"
+  },
+  {
+    "id": "bare-AZURE_STORAGE_ACCESS_KEY",
+    "style": "bare",
+    "query": "AZURE_STORAGE_ACCESS_KEY",
+    "identifier": "AZURE_STORAGE_ACCESS_KEY",
+    "gold_chunk_uid": "58a41b0d44be2297"
+  },
+  {
+    "id": "nat-AZURE_STORAGE_ACCESS_KEY",
+    "style": "natural",
+    "query": "How do I set AZURE_STORAGE_ACCESS_KEY?",
+    "identifier": "AZURE_STORAGE_ACCESS_KEY",
+    "gold_chunk_uid": "58a41b0d44be2297"
+  },
+  {
+    "id": "bare-AZURE_STORAGE_ACCOUNT_NAME",
+    "style": "bare",
+    "query": "AZURE_STORAGE_ACCOUNT_NAME",
+    "identifier": "AZURE_STORAGE_ACCOUNT_NAME",
+    "gold_chunk_uid": "58a41b0d44be2297"
+  },
+  {
+    "id": "nat-AZURE_STORAGE_ACCOUNT_NAME",
+    "style": "natural",
+    "query": "What is AZURE_STORAGE_ACCOUNT_NAME used for?",
+    "identifier": "AZURE_STORAGE_ACCOUNT_NAME",
+    "gold_chunk_uid": "58a41b0d44be2297"
+  },
+  {
+    "id": "bare-AZURE_STORAGE_CONTAINER",
+    "style": "bare",
+    "query": "AZURE_STORAGE_CONTAINER",
+    "identifier": "AZURE_STORAGE_CONTAINER",
+    "gold_chunk_uid": "58a41b0d44be2297"
+  },
+  {
+    "id": "nat-AZURE_STORAGE_CONTAINER",
+    "style": "natural",
+    "query": "What does AZURE_STORAGE_CONTAINER configure?",
+    "identifier": "AZURE_STORAGE_CONTAINER",
+    "gold_chunk_uid": "58a41b0d44be2297"
+  },
+  {
+    "id": "bare-CC_POST_BUILD_HOOK",
+    "style": "bare",
+    "query": "CC_POST_BUILD_HOOK",
+    "identifier": "CC_POST_BUILD_HOOK",
+    "gold_chunk_uid": "b2b087e0afb585f0"
+  },
+  {
+    "id": "nat-CC_POST_BUILD_HOOK",
+    "style": "natural",
+    "query": "How do I set CC_POST_BUILD_HOOK?",
+    "identifier": "CC_POST_BUILD_HOOK",
+    "gold_chunk_uid": "b2b087e0afb585f0"
+  },
+  {
+    "id": "bare-CC_PRE_BUILD_HOOK",
+    "style": "bare",
+    "query": "CC_PRE_BUILD_HOOK",
+    "identifier": "CC_PRE_BUILD_HOOK",
+    "gold_chunk_uid": "b2b087e0afb585f0"
+  },
+  {
+    "id": "nat-CC_PRE_BUILD_HOOK",
+    "style": "natural",
+    "query": "What is CC_PRE_BUILD_HOOK used for?",
+    "identifier": "CC_PRE_BUILD_HOOK",
+    "gold_chunk_uid": "b2b087e0afb585f0"
+  },
+  {
+    "id": "bare-CC_PRE_RUN_HOOK",
+    "style": "bare",
+    "query": "CC_PRE_RUN_HOOK",
+    "identifier": "CC_PRE_RUN_HOOK",
+    "gold_chunk_uid": "b2b087e0afb585f0"
+  },
+  {
+    "id": "nat-CC_PRE_RUN_HOOK",
+    "style": "natural",
+    "query": "What does CC_PRE_RUN_HOOK configure?",
+    "identifier": "CC_PRE_RUN_HOOK",
+    "gold_chunk_uid": "b2b087e0afb585f0"
+  },
+  {
+    "id": "bare-CHATWOOT_INSTALL_DIR",
+    "style": "bare",
+    "query": "CHATWOOT_INSTALL_DIR",
+    "identifier": "CHATWOOT_INSTALL_DIR",
+    "gold_chunk_uid": "b89203815e1ba91b"
+  },
+  {
+    "id": "nat-CHATWOOT_INSTALL_DIR",
+    "style": "natural",
+    "query": "How do I set CHATWOOT_INSTALL_DIR?",
+    "identifier": "CHATWOOT_INSTALL_DIR",
+    "gold_chunk_uid": "b89203815e1ba91b"
+  },
+  {
+    "id": "bare-CHATWOOT_VERSION",
+    "style": "bare",
+    "query": "CHATWOOT_VERSION",
+    "identifier": "CHATWOOT_VERSION",
+    "gold_chunk_uid": "b89203815e1ba91b"
+  },
+  {
+    "id": "nat-CHATWOOT_VERSION",
+    "style": "natural",
+    "query": "What is CHATWOOT_VERSION used for?",
+    "identifier": "CHATWOOT_VERSION",
+    "gold_chunk_uid": "b89203815e1ba91b"
+  },
+  {
+    "id": "bare-CORS_ORIGINS",
+    "style": "bare",
+    "query": "CORS_ORIGINS",
+    "identifier": "CORS_ORIGINS",
+    "gold_chunk_uid": "594f27f6af981f7e"
+  },
+  {
+    "id": "nat-CORS_ORIGINS",
+    "style": "natural",
+    "query": "What does CORS_ORIGINS configure?",
+    "identifier": "CORS_ORIGINS",
+    "gold_chunk_uid": "594f27f6af981f7e"
+  },
+  {
+    "id": "bare-DD_API_KEY",
+    "style": "bare",
+    "query": "DD_API_KEY",
+    "identifier": "DD_API_KEY",
+    "gold_chunk_uid": "a41e12b612a0dac1"
+  },
+  {
+    "id": "nat-DD_API_KEY",
+    "style": "natural",
+    "query": "How do I set DD_API_KEY?",
+    "identifier": "DD_API_KEY",
+    "gold_chunk_uid": "a41e12b612a0dac1"
+  },
+  {
+    "id": "bare-DD_SITE",
+    "style": "bare",
+    "query": "DD_SITE",
+    "identifier": "DD_SITE",
+    "gold_chunk_uid": "a41e12b612a0dac1"
+  },
+  {
+    "id": "nat-DD_SITE",
+    "style": "natural",
+    "query": "What is DD_SITE used for?",
+    "identifier": "DD_SITE",
+    "gold_chunk_uid": "a41e12b612a0dac1"
+  },
+  {
+    "id": "bare-DD_TRACE_AGENT_URL",
+    "style": "bare",
+    "query": "DD_TRACE_AGENT_URL",
+    "identifier": "DD_TRACE_AGENT_URL",
+    "gold_chunk_uid": "a41e12b612a0dac1"
+  },
+  {
+    "id": "nat-DD_TRACE_AGENT_URL",
+    "style": "natural",
+    "query": "What does DD_TRACE_AGENT_URL configure?",
+    "identifier": "DD_TRACE_AGENT_URL",
+    "gold_chunk_uid": "a41e12b612a0dac1"
+  },
+  {
+    "id": "bare-DEFAULT_LOCALE",
+    "style": "bare",
+    "query": "DEFAULT_LOCALE",
+    "identifier": "DEFAULT_LOCALE",
+    "gold_chunk_uid": "838b4dd3087793cd"
+  },
+  {
+    "id": "nat-DEFAULT_LOCALE",
+    "style": "natural",
+    "query": "How do I set DEFAULT_LOCALE?",
+    "identifier": "DEFAULT_LOCALE",
+    "gold_chunk_uid": "838b4dd3087793cd"
+  },
+  {
+    "id": "bare-DIRECT_UPLOADS_ENABLED",
+    "style": "bare",
+    "query": "DIRECT_UPLOADS_ENABLED",
+    "identifier": "DIRECT_UPLOADS_ENABLED",
+    "gold_chunk_uid": "359901b6aec776f4"
+  },
+  {
+    "id": "nat-DIRECT_UPLOADS_ENABLED",
+    "style": "natural",
+    "query": "What is DIRECT_UPLOADS_ENABLED used for?",
+    "identifier": "DIRECT_UPLOADS_ENABLED",
+    "gold_chunk_uid": "359901b6aec776f4"
+  },
+  {
+    "id": "bare-DISABLE_TELEMETRY",
+    "style": "bare",
+    "query": "DISABLE_TELEMETRY",
+    "identifier": "DISABLE_TELEMETRY",
+    "gold_chunk_uid": "a0581042a364ff10"
+  },
+  {
+    "id": "nat-DISABLE_TELEMETRY",
+    "style": "natural",
+    "query": "What does DISABLE_TELEMETRY configure?",
+    "identifier": "DISABLE_TELEMETRY",
+    "gold_chunk_uid": "a0581042a364ff10"
+  },
+  {
+    "id": "bare-ENABLE_DEVELOPMENT_FEATURES",
+    "style": "bare",
+    "query": "ENABLE_DEVELOPMENT_FEATURES",
+    "identifier": "ENABLE_DEVELOPMENT_FEATURES",
+    "gold_chunk_uid": "91e15c4727f254a0"
+  },
+  {
+    "id": "nat-ENABLE_DEVELOPMENT_FEATURES",
+    "style": "natural",
+    "query": "How do I set ENABLE_DEVELOPMENT_FEATURES?",
+    "identifier": "ENABLE_DEVELOPMENT_FEATURES",
+    "gold_chunk_uid": "91e15c4727f254a0"
+  },
+  {
+    "id": "bare-ENABLE_RACK_ATTACK",
+    "style": "bare",
+    "query": "ENABLE_RACK_ATTACK",
+    "identifier": "ENABLE_RACK_ATTACK",
+    "gold_chunk_uid": "585543aa6a663f1e"
+  },
+  {
+    "id": "nat-ENABLE_RACK_ATTACK",
+    "style": "natural",
+    "query": "What is ENABLE_RACK_ATTACK used for?",
+    "identifier": "ENABLE_RACK_ATTACK",
+    "gold_chunk_uid": "585543aa6a663f1e"
+  },
+  {
+    "id": "bare-ENABLE_RACK_ATTACK_WIDGET_API",
+    "style": "bare",
+    "query": "ENABLE_RACK_ATTACK_WIDGET_API",
+    "identifier": "ENABLE_RACK_ATTACK_WIDGET_API",
+    "gold_chunk_uid": "585543aa6a663f1e"
+  },
+  {
+    "id": "nat-ENABLE_RACK_ATTACK_WIDGET_API",
+    "style": "natural",
+    "query": "What does ENABLE_RACK_ATTACK_WIDGET_API configure?",
+    "identifier": "ENABLE_RACK_ATTACK_WIDGET_API",
+    "gold_chunk_uid": "585543aa6a663f1e"
+  },
+  {
+    "id": "bare-ERR_PNPM_PEER_DEP_ISSUES",
+    "style": "bare",
+    "query": "ERR_PNPM_PEER_DEP_ISSUES",
+    "identifier": "ERR_PNPM_PEER_DEP_ISSUES",
+    "gold_chunk_uid": "4a208e1219642349"
+  },
+  {
+    "id": "nat-ERR_PNPM_PEER_DEP_ISSUES",
+    "style": "natural",
+    "query": "How do I set ERR_PNPM_PEER_DEP_ISSUES?",
+    "identifier": "ERR_PNPM_PEER_DEP_ISSUES",
+    "gold_chunk_uid": "4a208e1219642349"
+  },
+  {
+    "id": "bare-EXPO_APPLE_ID",
+    "style": "bare",
+    "query": "EXPO_APPLE_ID",
+    "identifier": "EXPO_APPLE_ID",
+    "gold_chunk_uid": "33ce4be2dc946deb"
+  },
+  {
+    "id": "nat-EXPO_APPLE_ID",
+    "style": "natural",
+    "query": "What is EXPO_APPLE_ID used for?",
+    "identifier": "EXPO_APPLE_ID",
+    "gold_chunk_uid": "33ce4be2dc946deb"
+  },
+  {
+    "id": "bare-EXPO_APPLE_TEAM_ID",
+    "style": "bare",
+    "query": "EXPO_APPLE_TEAM_ID",
+    "identifier": "EXPO_APPLE_TEAM_ID",
+    "gold_chunk_uid": "33ce4be2dc946deb"
+  },
+  {
+    "id": "nat-EXPO_APPLE_TEAM_ID",
+    "style": "natural",
+    "query": "What does EXPO_APPLE_TEAM_ID configure?",
+    "identifier": "EXPO_APPLE_TEAM_ID",
+    "gold_chunk_uid": "33ce4be2dc946deb"
+  },
+  {
+    "id": "bare-EXPO_PUBLIC_APP_SLUG",
+    "style": "bare",
+    "query": "EXPO_PUBLIC_APP_SLUG",
+    "identifier": "EXPO_PUBLIC_APP_SLUG",
+    "gold_chunk_uid": "33ce4be2dc946deb"
+  },
+  {
+    "id": "nat-EXPO_PUBLIC_APP_SLUG",
+    "style": "natural",
+    "query": "How do I set EXPO_PUBLIC_APP_SLUG?",
+    "identifier": "EXPO_PUBLIC_APP_SLUG",
+    "gold_chunk_uid": "33ce4be2dc946deb"
+  },
+  {
+    "id": "bare-EXPO_PUBLIC_CHATWOOT_BASE_URL",
+    "style": "bare",
+    "query": "EXPO_PUBLIC_CHATWOOT_BASE_URL",
+    "identifier": "EXPO_PUBLIC_CHATWOOT_BASE_URL",
+    "gold_chunk_uid": "33ce4be2dc946deb"
+  },
+  {
+    "id": "nat-EXPO_PUBLIC_CHATWOOT_BASE_URL",
+    "style": "natural",
+    "query": "What is EXPO_PUBLIC_CHATWOOT_BASE_URL used for?",
+    "identifier": "EXPO_PUBLIC_CHATWOOT_BASE_URL",
+    "gold_chunk_uid": "33ce4be2dc946deb"
+  },
+  {
+    "id": "bare-EXPO_PUBLIC_CHATWOOT_WEBSITE_TOKEN",
+    "style": "bare",
+    "query": "EXPO_PUBLIC_CHATWOOT_WEBSITE_TOKEN",
+    "identifier": "EXPO_PUBLIC_CHATWOOT_WEBSITE_TOKEN",
+    "gold_chunk_uid": "33ce4be2dc946deb"
+  },
+  {
+    "id": "nat-EXPO_PUBLIC_CHATWOOT_WEBSITE_TOKEN",
+    "style": "natural",
+    "query": "What does EXPO_PUBLIC_CHATWOOT_WEBSITE_TOKEN configure?",
+    "identifier": "EXPO_PUBLIC_CHATWOOT_WEBSITE_TOKEN",
+    "gold_chunk_uid": "33ce4be2dc946deb"
+  },
+  {
+    "id": "bare-EXPO_PUBLIC_JUNE_SDK_KEY",
+    "style": "bare",
+    "query": "EXPO_PUBLIC_JUNE_SDK_KEY",
+    "identifier": "EXPO_PUBLIC_JUNE_SDK_KEY",
+    "gold_chunk_uid": "33ce4be2dc946deb"
+  },
+  {
+    "id": "nat-EXPO_PUBLIC_JUNE_SDK_KEY",
+    "style": "natural",
+    "query": "How do I set EXPO_PUBLIC_JUNE_SDK_KEY?",
+    "identifier": "EXPO_PUBLIC_JUNE_SDK_KEY",
+    "gold_chunk_uid": "33ce4be2dc946deb"
+  },
+  {
+    "id": "bare-EXPO_PUBLIC_MINIMUM_CHATWOOT_VERSION",
+    "style": "bare",
+    "query": "EXPO_PUBLIC_MINIMUM_CHATWOOT_VERSION",
+    "identifier": "EXPO_PUBLIC_MINIMUM_CHATWOOT_VERSION",
+    "gold_chunk_uid": "33ce4be2dc946deb"
+  },
+  {
+    "id": "nat-EXPO_PUBLIC_MINIMUM_CHATWOOT_VERSION",
+    "style": "natural",
+    "query": "What is EXPO_PUBLIC_MINIMUM_CHATWOOT_VERSION used for?",
+    "identifier": "EXPO_PUBLIC_MINIMUM_CHATWOOT_VERSION",
+    "gold_chunk_uid": "33ce4be2dc946deb"
+  },
+  {
+    "id": "bare-EXPO_PUBLIC_PROJECT_ID",
+    "style": "bare",
+    "query": "EXPO_PUBLIC_PROJECT_ID",
+    "identifier": "EXPO_PUBLIC_PROJECT_ID",
+    "gold_chunk_uid": "33ce4be2dc946deb"
+  },
+  {
+    "id": "nat-EXPO_PUBLIC_PROJECT_ID",
+    "style": "natural",
+    "query": "What does EXPO_PUBLIC_PROJECT_ID configure?",
+    "identifier": "EXPO_PUBLIC_PROJECT_ID",
+    "gold_chunk_uid": "33ce4be2dc946deb"
+  },
+  {
+    "id": "bare-EXPO_PUBLIC_SENTRY_DSN",
+    "style": "bare",
+    "query": "EXPO_PUBLIC_SENTRY_DSN",
+    "identifier": "EXPO_PUBLIC_SENTRY_DSN",
+    "gold_chunk_uid": "33ce4be2dc946deb"
+  },
+  {
+    "id": "nat-EXPO_PUBLIC_SENTRY_DSN",
+    "style": "natural",
+    "query": "How do I set EXPO_PUBLIC_SENTRY_DSN?",
+    "identifier": "EXPO_PUBLIC_SENTRY_DSN",
+    "gold_chunk_uid": "33ce4be2dc946deb"
+  },
+  {
+    "id": "bare-EXPO_PUBLIC_SENTRY_ORG_NAME",
+    "style": "bare",
+    "query": "EXPO_PUBLIC_SENTRY_ORG_NAME",
+    "identifier": "EXPO_PUBLIC_SENTRY_ORG_NAME",
+    "gold_chunk_uid": "33ce4be2dc946deb"
+  },
+  {
+    "id": "nat-EXPO_PUBLIC_SENTRY_ORG_NAME",
+    "style": "natural",
+    "query": "What is EXPO_PUBLIC_SENTRY_ORG_NAME used for?",
+    "identifier": "EXPO_PUBLIC_SENTRY_ORG_NAME",
+    "gold_chunk_uid": "33ce4be2dc946deb"
+  },
+  {
+    "id": "bare-EXPO_PUBLIC_SENTRY_PROJECT_NAME",
+    "style": "bare",
+    "query": "EXPO_PUBLIC_SENTRY_PROJECT_NAME",
+    "identifier": "EXPO_PUBLIC_SENTRY_PROJECT_NAME",
+    "gold_chunk_uid": "33ce4be2dc946deb"
+  },
+  {
+    "id": "nat-EXPO_PUBLIC_SENTRY_PROJECT_NAME",
+    "style": "natural",
+    "query": "What does EXPO_PUBLIC_SENTRY_PROJECT_NAME configure?",
+    "identifier": "EXPO_PUBLIC_SENTRY_PROJECT_NAME",
+    "gold_chunk_uid": "33ce4be2dc946deb"
+  },
+  {
+    "id": "bare-EXPO_STORYBOOK_ENABLED",
+    "style": "bare",
+    "query": "EXPO_STORYBOOK_ENABLED",
+    "identifier": "EXPO_STORYBOOK_ENABLED",
+    "gold_chunk_uid": "33ce4be2dc946deb"
+  },
+  {
+    "id": "nat-EXPO_STORYBOOK_ENABLED",
+    "style": "natural",
+    "query": "How do I set EXPO_STORYBOOK_ENABLED?",
+    "identifier": "EXPO_STORYBOOK_ENABLED",
+    "gold_chunk_uid": "33ce4be2dc946deb"
+  },
+  {
+    "id": "bare-FIREBASE_CREDENTIALS",
+    "style": "bare",
+    "query": "FIREBASE_CREDENTIALS",
+    "identifier": "FIREBASE_CREDENTIALS",
+    "gold_chunk_uid": "f334489acc89a9be"
+  },
+  {
+    "id": "nat-FIREBASE_CREDENTIALS",
+    "style": "natural",
+    "query": "What is FIREBASE_CREDENTIALS used for?",
+    "identifier": "FIREBASE_CREDENTIALS",
+    "gold_chunk_uid": "f334489acc89a9be"
+  },
+  {
+    "id": "bare-FIREBASE_PROJECT_ID",
+    "style": "bare",
+    "query": "FIREBASE_PROJECT_ID",
+    "identifier": "FIREBASE_PROJECT_ID",
+    "gold_chunk_uid": "f334489acc89a9be"
+  },
+  {
+    "id": "nat-FIREBASE_PROJECT_ID",
+    "style": "natural",
+    "query": "What does FIREBASE_PROJECT_ID configure?",
+    "identifier": "FIREBASE_PROJECT_ID",
+    "gold_chunk_uid": "f334489acc89a9be"
+  },
+  {
+    "id": "bare-GOOGLE_OAUTH_CALLBACK_URL",
+    "style": "bare",
+    "query": "GOOGLE_OAUTH_CALLBACK_URL",
+    "identifier": "GOOGLE_OAUTH_CALLBACK_URL",
+    "gold_chunk_uid": "e2e4ac6c7466a4bf"
+  },
+  {
+    "id": "nat-GOOGLE_OAUTH_CALLBACK_URL",
+    "style": "natural",
+    "query": "How do I set GOOGLE_OAUTH_CALLBACK_URL?",
+    "identifier": "GOOGLE_OAUTH_CALLBACK_URL",
+    "gold_chunk_uid": "e2e4ac6c7466a4bf"
+  },
+  {
+    "id": "bare-INGRESS_PASSWORD",
+    "style": "bare",
+    "query": "INGRESS_PASSWORD",
+    "identifier": "INGRESS_PASSWORD",
+    "gold_chunk_uid": "1bd3782a33b63b20"
+  },
+  {
+    "id": "nat-INGRESS_PASSWORD",
+    "style": "natural",
+    "query": "What is INGRESS_PASSWORD used for?",
+    "identifier": "INGRESS_PASSWORD",
+    "gold_chunk_uid": "1bd3782a33b63b20"
+  },
+  {
+    "id": "bare-INSTAGRAM_VERIFY_TOKEN",
+    "style": "bare",
+    "query": "INSTAGRAM_VERIFY_TOKEN",
+    "identifier": "INSTAGRAM_VERIFY_TOKEN",
+    "gold_chunk_uid": "d6325f44ba16c9ca"
+  },
+  {
+    "id": "nat-INSTAGRAM_VERIFY_TOKEN",
+    "style": "natural",
+    "query": "What does INSTAGRAM_VERIFY_TOKEN configure?",
+    "identifier": "INSTAGRAM_VERIFY_TOKEN",
+    "gold_chunk_uid": "d6325f44ba16c9ca"
+  },
+  {
+    "id": "bare-INSTALLATION_ENV",
+    "style": "bare",
+    "query": "INSTALLATION_ENV",
+    "identifier": "INSTALLATION_ENV",
+    "gold_chunk_uid": "044f7874f0ac1d1f"
+  },
+  {
+    "id": "nat-INSTALLATION_ENV",
+    "style": "natural",
+    "query": "How do I set INSTALLATION_ENV?",
+    "identifier": "INSTALLATION_ENV",
+    "gold_chunk_uid": "044f7874f0ac1d1f"
+  },
+  {
+    "id": "bare-IOS_APP_ID",
+    "style": "bare",
+    "query": "IOS_APP_ID",
+    "identifier": "IOS_APP_ID",
+    "gold_chunk_uid": "044f7874f0ac1d1f"
+  },
+  {
+    "id": "nat-IOS_APP_ID",
+    "style": "natural",
+    "query": "What is IOS_APP_ID used for?",
+    "identifier": "IOS_APP_ID",
+    "gold_chunk_uid": "044f7874f0ac1d1f"
+  },
+  {
+    "id": "bare-IP_LOOKUP_API_KEY",
+    "style": "bare",
+    "query": "IP_LOOKUP_API_KEY",
+    "identifier": "IP_LOOKUP_API_KEY",
+    "gold_chunk_uid": "9d215667ba0d8ef7"
+  },
+  {
+    "id": "nat-IP_LOOKUP_API_KEY",
+    "style": "natural",
+    "query": "What does IP_LOOKUP_API_KEY configure?",
+    "identifier": "IP_LOOKUP_API_KEY",
+    "gold_chunk_uid": "9d215667ba0d8ef7"
+  },
+  {
+    "id": "bare-LETTER_OPENER",
+    "style": "bare",
+    "query": "LETTER_OPENER",
+    "identifier": "LETTER_OPENER",
+    "gold_chunk_uid": "b86c3454eb5a712c"
+  },
+  {
+    "id": "nat-LETTER_OPENER",
+    "style": "natural",
+    "query": "How do I set LETTER_OPENER?",
+    "identifier": "LETTER_OPENER",
+    "gold_chunk_uid": "b86c3454eb5a712c"
+  },
+  {
+    "id": "bare-LINEAR_CLIENT_ID",
+    "style": "bare",
+    "query": "LINEAR_CLIENT_ID",
+    "identifier": "LINEAR_CLIENT_ID",
+    "gold_chunk_uid": "1cc81a69c81fbafd"
+  },
+  {
+    "id": "nat-LINEAR_CLIENT_ID",
+    "style": "natural",
+    "query": "What is LINEAR_CLIENT_ID used for?",
+    "identifier": "LINEAR_CLIENT_ID",
+    "gold_chunk_uid": "1cc81a69c81fbafd"
+  },
+  {
+    "id": "bare-LINEAR_SIGNING_SECRET",
+    "style": "bare",
+    "query": "LINEAR_SIGNING_SECRET",
+    "identifier": "LINEAR_SIGNING_SECRET",
+    "gold_chunk_uid": "1cc81a69c81fbafd"
+  },
+  {
+    "id": "nat-LINEAR_SIGNING_SECRET",
+    "style": "natural",
+    "query": "What does LINEAR_SIGNING_SECRET configure?",
+    "identifier": "LINEAR_SIGNING_SECRET",
+    "gold_chunk_uid": "1cc81a69c81fbafd"
+  },
+  {
+    "id": "bare-LOG_ROCKET_PROJECT_ID",
+    "style": "bare",
+    "query": "LOG_ROCKET_PROJECT_ID",
+    "identifier": "LOG_ROCKET_PROJECT_ID",
+    "gold_chunk_uid": "e2e4ac6c7466a4bf"
+  },
+  {
+    "id": "nat-LOG_ROCKET_PROJECT_ID",
+    "style": "natural",
+    "query": "How do I set LOG_ROCKET_PROJECT_ID?",
+    "identifier": "LOG_ROCKET_PROJECT_ID",
+    "gold_chunk_uid": "e2e4ac6c7466a4bf"
+  },
+  {
+    "id": "bare-MALLOC_ARENA_MAX",
+    "style": "bare",
+    "query": "MALLOC_ARENA_MAX",
+    "identifier": "MALLOC_ARENA_MAX",
+    "gold_chunk_uid": "610c61f5e310f748"
+  },
+  {
+    "id": "nat-MALLOC_ARENA_MAX",
+    "style": "natural",
+    "query": "What is MALLOC_ARENA_MAX used for?",
+    "identifier": "MALLOC_ARENA_MAX",
+    "gold_chunk_uid": "610c61f5e310f748"
+  },
+  {
+    "id": "bare-NEW_RELIC_LICENSE_KEY",
+    "style": "bare",
+    "query": "NEW_RELIC_LICENSE_KEY",
+    "identifier": "NEW_RELIC_LICENSE_KEY",
+    "gold_chunk_uid": "a41e12b612a0dac1"
+  },
+  {
+    "id": "nat-NEW_RELIC_LICENSE_KEY",
+    "style": "natural",
+    "query": "What does NEW_RELIC_LICENSE_KEY configure?",
+    "identifier": "NEW_RELIC_LICENSE_KEY",
+    "gold_chunk_uid": "a41e12b612a0dac1"
+  },
+  {
+    "id": "bare-NODE_ENV",
+    "style": "bare",
+    "query": "NODE_ENV",
+    "identifier": "NODE_ENV",
+    "gold_chunk_uid": "91e15c4727f254a0"
+  },
+  {
+    "id": "nat-NODE_ENV",
+    "style": "natural",
+    "query": "How do I set NODE_ENV?",
+    "identifier": "NODE_ENV",
+    "gold_chunk_uid": "91e15c4727f254a0"
+  },
+  {
+    "id": "bare-POSTGRES_DATABASE",
+    "style": "bare",
+    "query": "POSTGRES_DATABASE",
+    "identifier": "POSTGRES_DATABASE",
+    "gold_chunk_uid": "c545e2c9e1d17665"
+  },
+  {
+    "id": "nat-POSTGRES_DATABASE",
+    "style": "natural",
+    "query": "What is POSTGRES_DATABASE used for?",
+    "identifier": "POSTGRES_DATABASE",
+    "gold_chunk_uid": "c545e2c9e1d17665"
+  },
+  {
+    "id": "bare-POSTGRES_DB",
+    "style": "bare",
+    "query": "POSTGRES_DB",
+    "identifier": "POSTGRES_DB",
+    "gold_chunk_uid": "4a208e1219642349"
+  },
+  {
+    "id": "nat-POSTGRES_DB",
+    "style": "natural",
+    "query": "What does POSTGRES_DB configure?",
+    "identifier": "POSTGRES_DB",
+    "gold_chunk_uid": "4a208e1219642349"
+  },
+  {
+    "id": "bare-POSTGRES_HOST",
+    "style": "bare",
+    "query": "POSTGRES_HOST",
+    "identifier": "POSTGRES_HOST",
+    "gold_chunk_uid": "c545e2c9e1d17665"
+  },
+  {
+    "id": "nat-POSTGRES_HOST",
+    "style": "natural",
+    "query": "How do I set POSTGRES_HOST?",
+    "identifier": "POSTGRES_HOST",
+    "gold_chunk_uid": "c545e2c9e1d17665"
+  },
+  {
+    "id": "bare-POSTGRES_PORT",
+    "style": "bare",
+    "query": "POSTGRES_PORT",
+    "identifier": "POSTGRES_PORT",
+    "gold_chunk_uid": "c545e2c9e1d17665"
+  },
+  {
+    "id": "nat-POSTGRES_PORT",
+    "style": "natural",
+    "query": "What is POSTGRES_PORT used for?",
+    "identifier": "POSTGRES_PORT",
+    "gold_chunk_uid": "c545e2c9e1d17665"
+  },
+  {
+    "id": "bare-POSTGRES_USER",
+    "style": "bare",
+    "query": "POSTGRES_USER",
+    "identifier": "POSTGRES_USER",
+    "gold_chunk_uid": "4a208e1219642349"
+  },
+  {
+    "id": "nat-POSTGRES_USER",
+    "style": "natural",
+    "query": "What does POSTGRES_USER configure?",
+    "identifier": "POSTGRES_USER",
+    "gold_chunk_uid": "4a208e1219642349"
+  },
+  {
+    "id": "bare-POSTGRES_USERNAME",
+    "style": "bare",
+    "query": "POSTGRES_USERNAME",
+    "identifier": "POSTGRES_USERNAME",
+    "gold_chunk_uid": "c545e2c9e1d17665"
+  },
+  {
+    "id": "nat-POSTGRES_USERNAME",
+    "style": "natural",
+    "query": "How do I set POSTGRES_USERNAME?",
+    "identifier": "POSTGRES_USERNAME",
+    "gold_chunk_uid": "c545e2c9e1d17665"
+  },
+  {
+    "id": "bare-RACK_ATTACK_LIMIT",
+    "style": "bare",
+    "query": "RACK_ATTACK_LIMIT",
+    "identifier": "RACK_ATTACK_LIMIT",
+    "gold_chunk_uid": "585543aa6a663f1e"
+  },
+  {
+    "id": "nat-RACK_ATTACK_LIMIT",
+    "style": "natural",
+    "query": "What is RACK_ATTACK_LIMIT used for?",
+    "identifier": "RACK_ATTACK_LIMIT",
+    "gold_chunk_uid": "585543aa6a663f1e"
+  },
+  {
+    "id": "bare-RACK_TIMEOUT_SERVICE_TIMEOUT",
+    "style": "bare",
+    "query": "RACK_TIMEOUT_SERVICE_TIMEOUT",
+    "identifier": "RACK_TIMEOUT_SERVICE_TIMEOUT",
+    "gold_chunk_uid": "2ac49ffaab1e48c0"
+  },
+  {
+    "id": "nat-RACK_TIMEOUT_SERVICE_TIMEOUT",
+    "style": "natural",
+    "query": "What does RACK_TIMEOUT_SERVICE_TIMEOUT configure?",
+    "identifier": "RACK_TIMEOUT_SERVICE_TIMEOUT",
+    "gold_chunk_uid": "2ac49ffaab1e48c0"
+  },
+  {
+    "id": "bare-RAILS_LOG_TO_STDOUT",
+    "style": "bare",
+    "query": "RAILS_LOG_TO_STDOUT",
+    "identifier": "RAILS_LOG_TO_STDOUT",
+    "gold_chunk_uid": "8b32731c0803149b"
+  },
+  {
+    "id": "nat-RAILS_LOG_TO_STDOUT",
+    "style": "natural",
+    "query": "How do I set RAILS_LOG_TO_STDOUT?",
+    "identifier": "RAILS_LOG_TO_STDOUT",
+    "gold_chunk_uid": "8b32731c0803149b"
+  },
+  {
+    "id": "bare-RAILS_MIN_THREADS",
+    "style": "bare",
+    "query": "RAILS_MIN_THREADS",
+    "identifier": "RAILS_MIN_THREADS",
+    "gold_chunk_uid": "ae7f5a595c1a6bc0"
+  },
+  {
+    "id": "nat-RAILS_MIN_THREADS",
+    "style": "natural",
+    "query": "What is RAILS_MIN_THREADS used for?",
+    "identifier": "RAILS_MIN_THREADS",
+    "gold_chunk_uid": "ae7f5a595c1a6bc0"
+  },
+  {
+    "id": "bare-REDIS_PASSWORD",
+    "style": "bare",
+    "query": "REDIS_PASSWORD",
+    "identifier": "REDIS_PASSWORD",
+    "gold_chunk_uid": "c545e2c9e1d17665"
+  },
+  {
+    "id": "nat-REDIS_PASSWORD",
+    "style": "natural",
+    "query": "What does REDIS_PASSWORD configure?",
+    "identifier": "REDIS_PASSWORD",
+    "gold_chunk_uid": "c545e2c9e1d17665"
+  },
+  {
+    "id": "bare-REDIS_SENTINELS",
+    "style": "bare",
+    "query": "REDIS_SENTINELS",
+    "identifier": "REDIS_SENTINELS",
+    "gold_chunk_uid": "8b32731c0803149b"
+  },
+  {
+    "id": "nat-REDIS_SENTINELS",
+    "style": "natural",
+    "query": "How do I set REDIS_SENTINELS?",
+    "identifier": "REDIS_SENTINELS",
+    "gold_chunk_uid": "8b32731c0803149b"
+  },
+  {
+    "id": "bare-REDIS_SENTINEL_MASTER_NAME",
+    "style": "bare",
+    "query": "REDIS_SENTINEL_MASTER_NAME",
+    "identifier": "REDIS_SENTINEL_MASTER_NAME",
+    "gold_chunk_uid": "8b32731c0803149b"
+  },
+  {
+    "id": "nat-REDIS_SENTINEL_MASTER_NAME",
+    "style": "natural",
+    "query": "What is REDIS_SENTINEL_MASTER_NAME used for?",
+    "identifier": "REDIS_SENTINEL_MASTER_NAME",
+    "gold_chunk_uid": "8b32731c0803149b"
+  },
+  {
+    "id": "bare-REDIS_TLS",
+    "style": "bare",
+    "query": "REDIS_TLS",
+    "identifier": "REDIS_TLS",
+    "gold_chunk_uid": "8b32731c0803149b"
+  },
+  {
+    "id": "nat-REDIS_TLS",
+    "style": "natural",
+    "query": "What does REDIS_TLS configure?",
+    "identifier": "REDIS_TLS",
+    "gold_chunk_uid": "8b32731c0803149b"
+  },
+  {
+    "id": "bare-RUBY_GC_HEAP_FREE_SLOTS",
+    "style": "bare",
+    "query": "RUBY_GC_HEAP_FREE_SLOTS",
+    "identifier": "RUBY_GC_HEAP_FREE_SLOTS",
+    "gold_chunk_uid": "5ccbf11889fb30be"
+  },
+  {
+    "id": "nat-RUBY_GC_HEAP_FREE_SLOTS",
+    "style": "natural",
+    "query": "How do I set RUBY_GC_HEAP_FREE_SLOTS?",
+    "identifier": "RUBY_GC_HEAP_FREE_SLOTS",
+    "gold_chunk_uid": "5ccbf11889fb30be"
+  },
+  {
+    "id": "bare-RUBY_GC_HEAP_INIT_SLOTS",
+    "style": "bare",
+    "query": "RUBY_GC_HEAP_INIT_SLOTS",
+    "identifier": "RUBY_GC_HEAP_INIT_SLOTS",
+    "gold_chunk_uid": "5ccbf11889fb30be"
+  },
+  {
+    "id": "nat-RUBY_GC_HEAP_INIT_SLOTS",
+    "style": "natural",
+    "query": "What is RUBY_GC_HEAP_INIT_SLOTS used for?",
+    "identifier": "RUBY_GC_HEAP_INIT_SLOTS",
+    "gold_chunk_uid": "5ccbf11889fb30be"
+  },
+  {
+    "id": "bare-SCOUT_KEY",
+    "style": "bare",
+    "query": "SCOUT_KEY",
+    "identifier": "SCOUT_KEY",
+    "gold_chunk_uid": "a41e12b612a0dac1"
+  },
+  {
+    "id": "nat-SCOUT_KEY",
+    "style": "natural",
+    "query": "What does SCOUT_KEY configure?",
+    "identifier": "SCOUT_KEY",
+    "gold_chunk_uid": "a41e12b612a0dac1"
+  },
+  {
+    "id": "bare-SCOUT_MONITOR",
+    "style": "bare",
+    "query": "SCOUT_MONITOR",
+    "identifier": "SCOUT_MONITOR",
+    "gold_chunk_uid": "a41e12b612a0dac1"
+  },
+  {
+    "id": "nat-SCOUT_MONITOR",
+    "style": "natural",
+    "query": "How do I set SCOUT_MONITOR?",
+    "identifier": "SCOUT_MONITOR",
+    "gold_chunk_uid": "a41e12b612a0dac1"
+  },
+  {
+    "id": "bare-SCOUT_NAME",
+    "style": "bare",
+    "query": "SCOUT_NAME",
+    "identifier": "SCOUT_NAME",
+    "gold_chunk_uid": "a41e12b612a0dac1"
+  },
+  {
+    "id": "nat-SCOUT_NAME",
+    "style": "natural",
+    "query": "What is SCOUT_NAME used for?",
+    "identifier": "SCOUT_NAME",
+    "gold_chunk_uid": "a41e12b612a0dac1"
+  },
+  {
+    "id": "bare-SIDEKIQ_CONCURRENCY",
+    "style": "bare",
+    "query": "SIDEKIQ_CONCURRENCY",
+    "identifier": "SIDEKIQ_CONCURRENCY",
+    "gold_chunk_uid": "2ac49ffaab1e48c0"
+  },
+  {
+    "id": "nat-SIDEKIQ_CONCURRENCY",
+    "style": "natural",
+    "query": "What does SIDEKIQ_CONCURRENCY configure?",
+    "identifier": "SIDEKIQ_CONCURRENCY",
+    "gold_chunk_uid": "2ac49ffaab1e48c0"
+  },
+  {
+    "id": "bare-SMTP_OPENSSL_VERIFY_MODE",
+    "style": "bare",
+    "query": "SMTP_OPENSSL_VERIFY_MODE",
+    "identifier": "SMTP_OPENSSL_VERIFY_MODE",
+    "gold_chunk_uid": "044f7874f0ac1d1f"
+  },
+  {
+    "id": "nat-SMTP_OPENSSL_VERIFY_MODE",
+    "style": "natural",
+    "query": "How do I set SMTP_OPENSSL_VERIFY_MODE?",
+    "identifier": "SMTP_OPENSSL_VERIFY_MODE",
+    "gold_chunk_uid": "044f7874f0ac1d1f"
+  },
+  {
+    "id": "bare-SMTP_SSL",
+    "style": "bare",
+    "query": "SMTP_SSL",
+    "identifier": "SMTP_SSL",
+    "gold_chunk_uid": "d6c96b8dba6995c8"
+  },
+  {
+    "id": "nat-SMTP_SSL",
+    "style": "natural",
+    "query": "What is SMTP_SSL used for?",
+    "identifier": "SMTP_SSL",
+    "gold_chunk_uid": "d6c96b8dba6995c8"
+  },
+  {
+    "id": "bare-SMTP_TLS",
+    "style": "bare",
+    "query": "SMTP_TLS",
+    "identifier": "SMTP_TLS",
+    "gold_chunk_uid": "d6c96b8dba6995c8"
+  },
+  {
+    "id": "nat-SMTP_TLS",
+    "style": "natural",
+    "query": "What does SMTP_TLS configure?",
+    "identifier": "SMTP_TLS",
+    "gold_chunk_uid": "d6c96b8dba6995c8"
+  },
+  {
+    "id": "bare-STORAGE_ACCESS_KEY_ID",
+    "style": "bare",
+    "query": "STORAGE_ACCESS_KEY_ID",
+    "identifier": "STORAGE_ACCESS_KEY_ID",
+    "gold_chunk_uid": "58a41b0d44be2297"
+  },
+  {
+    "id": "nat-STORAGE_ACCESS_KEY_ID",
+    "style": "natural",
+    "query": "How do I set STORAGE_ACCESS_KEY_ID?",
+    "identifier": "STORAGE_ACCESS_KEY_ID",
+    "gold_chunk_uid": "58a41b0d44be2297"
+  },
+  {
+    "id": "bare-STORAGE_BUCKET_NAME",
+    "style": "bare",
+    "query": "STORAGE_BUCKET_NAME",
+    "identifier": "STORAGE_BUCKET_NAME",
+    "gold_chunk_uid": "58a41b0d44be2297"
+  },
+  {
+    "id": "nat-STORAGE_BUCKET_NAME",
+    "style": "natural",
+    "query": "What is STORAGE_BUCKET_NAME used for?",
+    "identifier": "STORAGE_BUCKET_NAME",
+    "gold_chunk_uid": "58a41b0d44be2297"
+  },
+  {
+    "id": "bare-STORAGE_ENDPOINT",
+    "style": "bare",
+    "query": "STORAGE_ENDPOINT",
+    "identifier": "STORAGE_ENDPOINT",
+    "gold_chunk_uid": "58a41b0d44be2297"
+  },
+  {
+    "id": "nat-STORAGE_ENDPOINT",
+    "style": "natural",
+    "query": "What does STORAGE_ENDPOINT configure?",
+    "identifier": "STORAGE_ENDPOINT",
+    "gold_chunk_uid": "58a41b0d44be2297"
+  },
+  {
+    "id": "bare-STORAGE_FORCE_PATH_STYLE",
+    "style": "bare",
+    "query": "STORAGE_FORCE_PATH_STYLE",
+    "identifier": "STORAGE_FORCE_PATH_STYLE",
+    "gold_chunk_uid": "58a41b0d44be2297"
+  },
+  {
+    "id": "nat-STORAGE_FORCE_PATH_STYLE",
+    "style": "natural",
+    "query": "How do I set STORAGE_FORCE_PATH_STYLE?",
+    "identifier": "STORAGE_FORCE_PATH_STYLE",
+    "gold_chunk_uid": "58a41b0d44be2297"
+  },
+  {
+    "id": "bare-STORAGE_REGION",
+    "style": "bare",
+    "query": "STORAGE_REGION",
+    "identifier": "STORAGE_REGION",
+    "gold_chunk_uid": "58a41b0d44be2297"
+  },
+  {
+    "id": "nat-STORAGE_REGION",
+    "style": "natural",
+    "query": "What is STORAGE_REGION used for?",
+    "identifier": "STORAGE_REGION",
+    "gold_chunk_uid": "58a41b0d44be2297"
+  },
+  {
+    "id": "bare-STORAGE_SECRET_ACCESS_KEY",
+    "style": "bare",
+    "query": "STORAGE_SECRET_ACCESS_KEY",
+    "identifier": "STORAGE_SECRET_ACCESS_KEY",
+    "gold_chunk_uid": "58a41b0d44be2297"
+  },
+  {
+    "id": "nat-STORAGE_SECRET_ACCESS_KEY",
+    "style": "natural",
+    "query": "What does STORAGE_SECRET_ACCESS_KEY configure?",
+    "identifier": "STORAGE_SECRET_ACCESS_KEY",
+    "gold_chunk_uid": "58a41b0d44be2297"
+  },
+  {
+    "id": "bare-TWITTER_APP_ID",
+    "style": "bare",
+    "query": "TWITTER_APP_ID",
+    "identifier": "TWITTER_APP_ID",
+    "gold_chunk_uid": "7f8c2816f910f5ee"
+  },
+  {
+    "id": "nat-TWITTER_APP_ID",
+    "style": "natural",
+    "query": "How do I set TWITTER_APP_ID?",
+    "identifier": "TWITTER_APP_ID",
+    "gold_chunk_uid": "7f8c2816f910f5ee"
+  },
+  {
+    "id": "bare-TWITTER_CONSUMER_KEY",
+    "style": "bare",
+    "query": "TWITTER_CONSUMER_KEY",
+    "identifier": "TWITTER_CONSUMER_KEY",
+    "gold_chunk_uid": "7f8c2816f910f5ee"
+  },
+  {
+    "id": "nat-TWITTER_CONSUMER_KEY",
+    "style": "natural",
+    "query": "What is TWITTER_CONSUMER_KEY used for?",
+    "identifier": "TWITTER_CONSUMER_KEY",
+    "gold_chunk_uid": "7f8c2816f910f5ee"
+  },
+  {
+    "id": "bare-TWITTER_CONSUMER_SECRET",
+    "style": "bare",
+    "query": "TWITTER_CONSUMER_SECRET",
+    "identifier": "TWITTER_CONSUMER_SECRET",
+    "gold_chunk_uid": "7f8c2816f910f5ee"
+  },
+  {
+    "id": "nat-TWITTER_CONSUMER_SECRET",
+    "style": "natural",
+    "query": "What does TWITTER_CONSUMER_SECRET configure?",
+    "identifier": "TWITTER_CONSUMER_SECRET",
+    "gold_chunk_uid": "7f8c2816f910f5ee"
+  },
+  {
+    "id": "bare-TWITTER_ENVIRONMENT",
+    "style": "bare",
+    "query": "TWITTER_ENVIRONMENT",
+    "identifier": "TWITTER_ENVIRONMENT",
+    "gold_chunk_uid": "7f8c2816f910f5ee"
+  },
+  {
+    "id": "nat-TWITTER_ENVIRONMENT",
+    "style": "natural",
+    "query": "How do I set TWITTER_ENVIRONMENT?",
+    "identifier": "TWITTER_ENVIRONMENT",
+    "gold_chunk_uid": "7f8c2816f910f5ee"
+  },
+  {
+    "id": "bare-USE_INBOX_AVATAR_FOR_BOT",
+    "style": "bare",
+    "query": "USE_INBOX_AVATAR_FOR_BOT",
+    "identifier": "USE_INBOX_AVATAR_FOR_BOT",
+    "gold_chunk_uid": "044f7874f0ac1d1f"
+  },
+  {
+    "id": "nat-USE_INBOX_AVATAR_FOR_BOT",
+    "style": "natural",
+    "query": "What is USE_INBOX_AVATAR_FOR_BOT used for?",
+    "identifier": "USE_INBOX_AVATAR_FOR_BOT",
+    "gold_chunk_uid": "044f7874f0ac1d1f"
+  },
+  {
+    "id": "bare-WEB_CONCURRENCY",
+    "style": "bare",
+    "query": "WEB_CONCURRENCY",
+    "identifier": "WEB_CONCURRENCY",
+    "gold_chunk_uid": "ae7f5a595c1a6bc0"
+  },
+  {
+    "id": "nat-WEB_CONCURRENCY",
+    "style": "natural",
+    "query": "What does WEB_CONCURRENCY configure?",
+    "identifier": "WEB_CONCURRENCY",
+    "gold_chunk_uid": "ae7f5a595c1a6bc0"
+  },
+  {
+    "id": "bare-WHATSAPP_APP_ID",
+    "style": "bare",
+    "query": "WHATSAPP_APP_ID",
+    "identifier": "WHATSAPP_APP_ID",
+    "gold_chunk_uid": "7827de0af328cde9"
+  },
+  {
+    "id": "nat-WHATSAPP_APP_ID",
+    "style": "natural",
+    "query": "How do I set WHATSAPP_APP_ID?",
+    "identifier": "WHATSAPP_APP_ID",
+    "gold_chunk_uid": "7827de0af328cde9"
+  },
+  {
+    "id": "bare-WHATSAPP_APP_SECRET",
+    "style": "bare",
+    "query": "WHATSAPP_APP_SECRET",
+    "identifier": "WHATSAPP_APP_SECRET",
+    "gold_chunk_uid": "7827de0af328cde9"
+  },
+  {
+    "id": "nat-WHATSAPP_APP_SECRET",
+    "style": "natural",
+    "query": "What is WHATSAPP_APP_SECRET used for?",
+    "identifier": "WHATSAPP_APP_SECRET",
+    "gold_chunk_uid": "7827de0af328cde9"
+  },
+  {
+    "id": "bare-WHATSAPP_CONFIGURATION_ID",
+    "style": "bare",
+    "query": "WHATSAPP_CONFIGURATION_ID",
+    "identifier": "WHATSAPP_CONFIGURATION_ID",
+    "gold_chunk_uid": "7827de0af328cde9"
+  },
+  {
+    "id": "nat-WHATSAPP_CONFIGURATION_ID",
+    "style": "natural",
+    "query": "What does WHATSAPP_CONFIGURATION_ID configure?",
+    "identifier": "WHATSAPP_CONFIGURATION_ID",
+    "gold_chunk_uid": "7827de0af328cde9"
+  },
+  {
+    "id": "bare-YOUR_USERNAME",
+    "style": "bare",
+    "query": "YOUR_USERNAME",
+    "identifier": "YOUR_USERNAME",
+    "gold_chunk_uid": "91e15c4727f254a0"
+  },
+  {
+    "id": "nat-YOUR_USERNAME",
+    "style": "natural",
+    "query": "How do I set YOUR_USERNAME?",
+    "identifier": "YOUR_USERNAME",
+    "gold_chunk_uid": "91e15c4727f254a0"
+  },
+  {
+    "id": "bare-ap-south-1a",
+    "style": "bare",
+    "query": "ap-south-1a",
+    "identifier": "ap-south-1a",
+    "gold_chunk_uid": "d9408050290796cf"
+  },
+  {
+    "id": "nat-ap-south-1a",
+    "style": "natural",
+    "query": "What is ap-south-1a used for?",
+    "identifier": "ap-south-1a",
+    "gold_chunk_uid": "d9408050290796cf"
+  },
+  {
+    "id": "bare-ap-south-1b",
+    "style": "bare",
+    "query": "ap-south-1b",
+    "identifier": "ap-south-1b",
+    "gold_chunk_uid": "d9408050290796cf"
+  },
+  {
+    "id": "nat-ap-south-1b",
+    "style": "natural",
+    "query": "What does ap-south-1b configure?",
+    "identifier": "ap-south-1b",
+    "gold_chunk_uid": "d9408050290796cf"
+  },
+  {
+    "id": "bare-app.config.ts",
+    "style": "bare",
+    "query": "app.config.ts",
+    "identifier": "app.config.ts",
+    "gold_chunk_uid": "6a9f043445ee9d2d"
+  },
+  {
+    "id": "nat-app.config.ts",
+    "style": "natural",
+    "query": "How do I set app.config.ts?",
+    "identifier": "app.config.ts",
+    "gold_chunk_uid": "6a9f043445ee9d2d"
+  },
+  {
+    "id": "bare-apple-app-site-association",
+    "style": "bare",
+    "query": "apple-app-site-association",
+    "identifier": "apple-app-site-association",
+    "gold_chunk_uid": "6a9f043445ee9d2d"
+  },
+  {
+    "id": "nat-apple-app-site-association",
+    "style": "natural",
+    "query": "What is apple-app-site-association used for?",
+    "identifier": "apple-app-site-association",
+    "gold_chunk_uid": "6a9f043445ee9d2d"
+  },
+  {
+    "id": "bare-binding.pry",
+    "style": "bare",
+    "query": "binding.pry",
+    "identifier": "binding.pry",
+    "gold_chunk_uid": "4124f7502349fb54"
+  },
+  {
+    "id": "nat-binding.pry",
+    "style": "natural",
+    "query": "What does binding.pry configure?",
+    "identifier": "binding.pry",
+    "gold_chunk_uid": "4124f7502349fb54"
+  },
+  {
+    "id": "bare-c5.xlarge",
+    "style": "bare",
+    "query": "c5.xlarge",
+    "identifier": "c5.xlarge",
+    "gold_chunk_uid": "d2047ec96558b19e"
+  },
+  {
+    "id": "nat-c5.xlarge",
+    "style": "natural",
+    "query": "How do I set c5.xlarge?",
+    "identifier": "c5.xlarge",
+    "gold_chunk_uid": "d2047ec96558b19e"
+  },
+  {
+    "id": "bare-chat.yourdoamain.com",
+    "style": "bare",
+    "query": "chat.yourdoamain.com",
+    "identifier": "chat.yourdoamain.com",
+    "gold_chunk_uid": "34f5d28c07fd297c"
+  },
+  {
+    "id": "nat-chat.yourdoamain.com",
+    "style": "natural",
+    "query": "What is chat.yourdoamain.com used for?",
+    "identifier": "chat.yourdoamain.com",
+    "gold_chunk_uid": "34f5d28c07fd297c"
+  },
+  {
+    "id": "bare-chatwoot-base-ami",
+    "style": "bare",
+    "query": "chatwoot-base-ami",
+    "identifier": "chatwoot-base-ami",
+    "gold_chunk_uid": "fc87855fee237dda"
+  },
+  {
+    "id": "nat-chatwoot-base-ami",
+    "style": "natural",
+    "query": "What does chatwoot-base-ami configure?",
+    "identifier": "chatwoot-base-ami",
+    "gold_chunk_uid": "fc87855fee237dda"
+  },
+  {
+    "id": "bare-chatwoot-bastion-a",
+    "style": "bare",
+    "query": "chatwoot-bastion-a",
+    "identifier": "chatwoot-bastion-a",
+    "gold_chunk_uid": "d2047ec96558b19e"
+  },
+  {
+    "id": "nat-chatwoot-bastion-a",
+    "style": "natural",
+    "query": "How do I set chatwoot-bastion-a?",
+    "identifier": "chatwoot-bastion-a",
+    "gold_chunk_uid": "d2047ec96558b19e"
+  },
+  {
+    "id": "bare-chatwoot-bastion-b",
+    "style": "bare",
+    "query": "chatwoot-bastion-b",
+    "identifier": "chatwoot-bastion-b",
+    "gold_chunk_uid": "d2047ec96558b19e"
+  },
+  {
+    "id": "nat-chatwoot-bastion-b",
+    "style": "natural",
+    "query": "What is chatwoot-bastion-b used for?",
+    "identifier": "chatwoot-bastion-b",
+    "gold_chunk_uid": "d2047ec96558b19e"
+  },
+  {
+    "id": "bare-chatwoot-bastion-sg",
+    "style": "bare",
+    "query": "chatwoot-bastion-sg",
+    "identifier": "chatwoot-bastion-sg",
+    "gold_chunk_uid": "d2047ec96558b19e"
+  },
+  {
+    "id": "nat-chatwoot-bastion-sg",
+    "style": "natural",
+    "query": "What does chatwoot-bastion-sg configure?",
+    "identifier": "chatwoot-bastion-sg",
+    "gold_chunk_uid": "d2047ec96558b19e"
+  },
+  {
+    "id": "bare-chatwoot-igw",
+    "style": "bare",
+    "query": "chatwoot-igw",
+    "identifier": "chatwoot-igw",
+    "gold_chunk_uid": "d9408050290796cf"
+  },
+  {
+    "id": "nat-chatwoot-igw",
+    "style": "natural",
+    "query": "How do I set chatwoot-igw?",
+    "identifier": "chatwoot-igw",
+    "gold_chunk_uid": "d9408050290796cf"
+  },
+  {
+    "id": "bare-chatwoot-loadbalancer",
+    "style": "bare",
+    "query": "chatwoot-loadbalancer",
+    "identifier": "chatwoot-loadbalancer",
+    "gold_chunk_uid": "83d11735a96cf33d"
+  },
+  {
+    "id": "nat-chatwoot-loadbalancer",
+    "style": "natural",
+    "query": "What is chatwoot-loadbalancer used for?",
+    "identifier": "chatwoot-loadbalancer",
+    "gold_chunk_uid": "83d11735a96cf33d"
+  },
+  {
+    "id": "bare-chatwoot-nat-1",
+    "style": "bare",
+    "query": "chatwoot-nat-1",
+    "identifier": "chatwoot-nat-1",
+    "gold_chunk_uid": "d9408050290796cf"
+  },
+  {
+    "id": "nat-chatwoot-nat-1",
+    "style": "natural",
+    "query": "What does chatwoot-nat-1 configure?",
+    "identifier": "chatwoot-nat-1",
+    "gold_chunk_uid": "d9408050290796cf"
+  },
+  {
+    "id": "bare-chatwoot-nat-2",
+    "style": "bare",
+    "query": "chatwoot-nat-2",
+    "identifier": "chatwoot-nat-2",
+    "gold_chunk_uid": "d9408050290796cf"
+  },
+  {
+    "id": "nat-chatwoot-nat-2",
+    "style": "natural",
+    "query": "How do I set chatwoot-nat-2?",
+    "identifier": "chatwoot-nat-2",
+    "gold_chunk_uid": "d9408050290796cf"
+  },
+  {
+    "id": "bare-chatwoot-private-2",
+    "style": "bare",
+    "query": "chatwoot-private-2",
+    "identifier": "chatwoot-private-2",
+    "gold_chunk_uid": "d9408050290796cf"
+  },
+  {
+    "id": "nat-chatwoot-private-2",
+    "style": "natural",
+    "query": "What is chatwoot-private-2 used for?",
+    "identifier": "chatwoot-private-2",
+    "gold_chunk_uid": "d9408050290796cf"
+  },
+  {
+    "id": "bare-chatwoot-private-a",
+    "style": "bare",
+    "query": "chatwoot-private-a",
+    "identifier": "chatwoot-private-a",
+    "gold_chunk_uid": "d9408050290796cf"
+  },
+  {
+    "id": "nat-chatwoot-private-a",
+    "style": "natural",
+    "query": "What does chatwoot-private-a configure?",
+    "identifier": "chatwoot-private-a",
+    "gold_chunk_uid": "d9408050290796cf"
+  },
+  {
+    "id": "bare-chatwoot-private-b",
+    "style": "bare",
+    "query": "chatwoot-private-b",
+    "identifier": "chatwoot-private-b",
+    "gold_chunk_uid": "d9408050290796cf"
+  },
+  {
+    "id": "nat-chatwoot-private-b",
+    "style": "natural",
+    "query": "How do I set chatwoot-private-b?",
+    "identifier": "chatwoot-private-b",
+    "gold_chunk_uid": "d9408050290796cf"
+  },
+  {
+    "id": "bare-chatwoot-public-rt",
+    "style": "bare",
+    "query": "chatwoot-public-rt",
+    "identifier": "chatwoot-public-rt",
+    "gold_chunk_uid": "d9408050290796cf"
+  },
+  {
+    "id": "nat-chatwoot-public-rt",
+    "style": "natural",
+    "query": "What is chatwoot-public-rt used for?",
+    "identifier": "chatwoot-public-rt",
+    "gold_chunk_uid": "d9408050290796cf"
+  },
+  {
+    "id": "bare-chatwoot-rds-group",
+    "style": "bare",
+    "query": "chatwoot-rds-group",
+    "identifier": "chatwoot-rds-group",
+    "gold_chunk_uid": "6a6246a370920f1b"
+  },
+  {
+    "id": "nat-chatwoot-rds-group",
+    "style": "natural",
+    "query": "What does chatwoot-rds-group configure?",
+    "identifier": "chatwoot-rds-group",
+    "gold_chunk_uid": "6a6246a370920f1b"
+  },
+  {
+    "id": "bare-chatwoot-rds-sg",
+    "style": "bare",
+    "query": "chatwoot-rds-sg",
+    "identifier": "chatwoot-rds-sg",
+    "gold_chunk_uid": "6a6246a370920f1b"
+  },
+  {
+    "id": "nat-chatwoot-rds-sg",
+    "style": "natural",
+    "query": "How do I set chatwoot-rds-sg?",
+    "identifier": "chatwoot-rds-sg",
+    "gold_chunk_uid": "6a6246a370920f1b"
+  },
+  {
+    "id": "bare-chatwoot-tg",
+    "style": "bare",
+    "query": "chatwoot-tg",
+    "identifier": "chatwoot-tg",
+    "gold_chunk_uid": "83d11735a96cf33d"
+  },
+  {
+    "id": "nat-chatwoot-tg",
+    "style": "natural",
+    "query": "What is chatwoot-tg used for?",
+    "identifier": "chatwoot-tg",
+    "gold_chunk_uid": "83d11735a96cf33d"
+  },
+  {
+    "id": "bare-chatwoot-web",
+    "style": "bare",
+    "query": "chatwoot-web",
+    "identifier": "chatwoot-web",
+    "gold_chunk_uid": "9304cc4ee9c82696"
+  },
+  {
+    "id": "nat-chatwoot-web",
+    "style": "natural",
+    "query": "What does chatwoot-web configure?",
+    "identifier": "chatwoot-web",
+    "gold_chunk_uid": "9304cc4ee9c82696"
+  },
+  {
+    "id": "bare-chatwoot.example.com",
+    "style": "bare",
+    "query": "chatwoot.example.com",
+    "identifier": "chatwoot.example.com",
+    "gold_chunk_uid": "95d78991abd8f03d"
+  },
+  {
+    "id": "nat-chatwoot.example.com",
+    "style": "natural",
+    "query": "How do I set chatwoot.example.com?",
+    "identifier": "chatwoot.example.com",
+    "gold_chunk_uid": "95d78991abd8f03d"
+  },
+  {
+    "id": "bare-chatwoot.exe",
+    "style": "bare",
+    "query": "chatwoot.exe",
+    "identifier": "chatwoot.exe",
+    "gold_chunk_uid": "b89203815e1ba91b"
+  },
+  {
+    "id": "nat-chatwoot.exe",
+    "style": "natural",
+    "query": "What is chatwoot.exe used for?",
+    "identifier": "chatwoot.exe",
+    "gold_chunk_uid": "b89203815e1ba91b"
+  },
+  {
+    "id": "bare-com.yourcompany.app",
+    "style": "bare",
+    "query": "com.yourcompany.app",
+    "identifier": "com.yourcompany.app",
+    "gold_chunk_uid": "f334489acc89a9be"
+  },
+  {
+    "id": "nat-com.yourcompany.app",
+    "style": "natural",
+    "query": "What does com.yourcompany.app configure?",
+    "identifier": "com.yourcompany.app",
+    "gold_chunk_uid": "f334489acc89a9be"
+  },
+  {
+    "id": "bare-docs.example.com",
+    "style": "bare",
+    "query": "docs.example.com",
+    "identifier": "docs.example.com",
+    "gold_chunk_uid": "b216433711f6a515"
+  },
+  {
+    "id": "nat-docs.example.com",
+    "style": "natural",
+    "query": "How do I set docs.example.com?",
+    "identifier": "docs.example.com",
+    "gold_chunk_uid": "b216433711f6a515"
+  },
+  {
+    "id": "bare-docs.yourdomain.com",
+    "style": "bare",
+    "query": "docs.yourdomain.com",
+    "identifier": "docs.yourdomain.com",
+    "gold_chunk_uid": "b216433711f6a515"
+  },
+  {
+    "id": "nat-docs.yourdomain.com",
+    "style": "natural",
+    "query": "What is docs.yourdomain.com used for?",
+    "identifier": "docs.yourdomain.com",
+    "gold_chunk_uid": "b216433711f6a515"
+  },
+  {
+    "id": "bare-dotenv-rails",
+    "style": "bare",
+    "query": "dotenv-rails",
+    "identifier": "dotenv-rails",
+    "gold_chunk_uid": "c545e2c9e1d17665"
+  },
+  {
+    "id": "nat-dotenv-rails",
+    "style": "natural",
+    "query": "What does dotenv-rails configure?",
+    "identifier": "dotenv-rails",
+    "gold_chunk_uid": "c545e2c9e1d17665"
+  },
+  {
+    "id": "bare-env.example",
+    "style": "bare",
+    "query": "env.example",
+    "identifier": "env.example",
+    "gold_chunk_uid": "c545e2c9e1d17665"
+  },
+  {
+    "id": "nat-env.example",
+    "style": "natural",
+    "query": "How do I set env.example?",
+    "identifier": "env.example",
+    "gold_chunk_uid": "c545e2c9e1d17665"
+  },
+  {
+    "id": "bare-example.com",
+    "style": "bare",
+    "query": "example.com",
+    "identifier": "example.com",
+    "gold_chunk_uid": "1db4ad3731e6e250"
+  },
+  {
+    "id": "nat-example.com",
+    "style": "natural",
+    "query": "What is example.com used for?",
+    "identifier": "example.com",
+    "gold_chunk_uid": "1db4ad3731e6e250"
+  },
+  {
+    "id": "bare-image.repository",
+    "style": "bare",
+    "query": "image.repository",
+    "identifier": "image.repository",
+    "gold_chunk_uid": "044f7874f0ac1d1f"
+  },
+  {
+    "id": "nat-image.repository",
+    "style": "natural",
+    "query": "What does image.repository configure?",
+    "identifier": "image.repository",
+    "gold_chunk_uid": "044f7874f0ac1d1f"
+  },
+  {
+    "id": "bare-image.tag",
+    "style": "bare",
+    "query": "image.tag",
+    "identifier": "image.tag",
+    "gold_chunk_uid": "044f7874f0ac1d1f"
+  },
+  {
+    "id": "nat-image.tag",
+    "style": "natural",
+    "query": "How do I set image.tag?",
+    "identifier": "image.tag",
+    "gold_chunk_uid": "044f7874f0ac1d1f"
+  },
+  {
+    "id": "bare-internet-facing",
+    "style": "bare",
+    "query": "internet-facing",
+    "identifier": "internet-facing",
+    "gold_chunk_uid": "83d11735a96cf33d"
+  },
+  {
+    "id": "nat-internet-facing",
+    "style": "natural",
+    "query": "What is internet-facing used for?",
+    "identifier": "internet-facing",
+    "gold_chunk_uid": "83d11735a96cf33d"
+  },
+  {
+    "id": "bare-latest-ce",
+    "style": "bare",
+    "query": "latest-ce",
+    "identifier": "latest-ce",
+    "gold_chunk_uid": "58080f245cc5a9b1"
+  },
+  {
+    "id": "nat-latest-ce",
+    "style": "natural",
+    "query": "What does latest-ce configure?",
+    "identifier": "latest-ce",
+    "gold_chunk_uid": "58080f245cc5a9b1"
+  },
+  {
+    "id": "bare-message.channels",
+    "style": "bare",
+    "query": "message.channels",
+    "identifier": "message.channels",
+    "gold_chunk_uid": "9e937614a3681180"
+  },
+  {
+    "id": "nat-message.channels",
+    "style": "natural",
+    "query": "How do I set message.channels?",
+    "identifier": "message.channels",
+    "gold_chunk_uid": "9e937614a3681180"
+  },
+  {
+    "id": "bare-message.groups",
+    "style": "bare",
+    "query": "message.groups",
+    "identifier": "message.groups",
+    "gold_chunk_uid": "9e937614a3681180"
+  },
+  {
+    "id": "nat-message.groups",
+    "style": "natural",
+    "query": "What is message.groups used for?",
+    "identifier": "message.groups",
+    "gold_chunk_uid": "9e937614a3681180"
+  },
+  {
+    "id": "bare-message.im",
+    "style": "bare",
+    "query": "message.im",
+    "identifier": "message.im",
+    "gold_chunk_uid": "9e937614a3681180"
+  },
+  {
+    "id": "nat-message.im",
+    "style": "natural",
+    "query": "What does message.im configure?",
+    "identifier": "message.im",
+    "gold_chunk_uid": "9e937614a3681180"
+  },
+  {
+    "id": "bare-message.mpim",
+    "style": "bare",
+    "query": "message.mpim",
+    "identifier": "message.mpim",
+    "gold_chunk_uid": "9e937614a3681180"
+  },
+  {
+    "id": "nat-message.mpim",
+    "style": "natural",
+    "query": "How do I set message.mpim?",
+    "identifier": "message.mpim",
+    "gold_chunk_uid": "9e937614a3681180"
+  },
+  {
+    "id": "bare-mx.sendgrid.net",
+    "style": "bare",
+    "query": "mx.sendgrid.net",
+    "identifier": "mx.sendgrid.net",
+    "gold_chunk_uid": "95d78991abd8f03d"
+  },
+  {
+    "id": "nat-mx.sendgrid.net",
+    "style": "natural",
+    "query": "What is mx.sendgrid.net used for?",
+    "identifier": "mx.sendgrid.net",
+    "gold_chunk_uid": "95d78991abd8f03d"
+  },
+  {
+    "id": "bare-my-project-12345",
+    "style": "bare",
+    "query": "my-project-12345",
+    "identifier": "my-project-12345",
+    "gold_chunk_uid": "f334489acc89a9be"
+  },
+  {
+    "id": "nat-my-project-12345",
+    "style": "natural",
+    "query": "What does my-project-12345 configure?",
+    "identifier": "my-project-12345",
+    "gold_chunk_uid": "f334489acc89a9be"
+  },
+  {
+    "id": "bare-package.json",
+    "style": "bare",
+    "query": "package.json",
+    "identifier": "package.json",
+    "gold_chunk_uid": "4124f7502349fb54"
+  },
+  {
+    "id": "nat-package.json",
+    "style": "natural",
+    "query": "How do I set package.json?",
+    "identifier": "package.json",
+    "gold_chunk_uid": "4124f7502349fb54"
+  },
+  {
+    "id": "bare-postgresql.auth.database",
+    "style": "bare",
+    "query": "postgresql.auth.database",
+    "identifier": "postgresql.auth.database",
+    "gold_chunk_uid": "0b3048ce039a994f"
+  },
+  {
+    "id": "nat-postgresql.auth.database",
+    "style": "natural",
+    "query": "What is postgresql.auth.database used for?",
+    "identifier": "postgresql.auth.database",
+    "gold_chunk_uid": "0b3048ce039a994f"
+  },
+  {
+    "id": "bare-postgresql.auth.username",
+    "style": "bare",
+    "query": "postgresql.auth.username",
+    "identifier": "postgresql.auth.username",
+    "gold_chunk_uid": "0b3048ce039a994f"
+  },
+  {
+    "id": "nat-postgresql.auth.username",
+    "style": "natural",
+    "query": "What does postgresql.auth.username configure?",
+    "identifier": "postgresql.auth.username",
+    "gold_chunk_uid": "0b3048ce039a994f"
+  },
+  {
+    "id": "bare-rack-timeout",
+    "style": "bare",
+    "query": "rack-timeout",
+    "identifier": "rack-timeout",
+    "gold_chunk_uid": "2ac49ffaab1e48c0"
+  },
+  {
+    "id": "nat-rack-timeout",
+    "style": "natural",
+    "query": "How do I set rack-timeout?",
+    "identifier": "rack-timeout",
+    "gold_chunk_uid": "2ac49ffaab1e48c0"
+  },
+  {
+    "id": "bare-redis.auth.password",
+    "style": "bare",
+    "query": "redis.auth.password",
+    "identifier": "redis.auth.password",
+    "gold_chunk_uid": "8b32731c0803149b"
+  },
+  {
+    "id": "nat-redis.auth.password",
+    "style": "natural",
+    "query": "What is redis.auth.password used for?",
+    "identifier": "redis.auth.password",
+    "gold_chunk_uid": "8b32731c0803149b"
+  },
+  {
+    "id": "bare-redis.host",
+    "style": "bare",
+    "query": "redis.host",
+    "identifier": "redis.host",
+    "gold_chunk_uid": "8b32731c0803149b"
+  },
+  {
+    "id": "nat-redis.host",
+    "style": "natural",
+    "query": "What does redis.host configure?",
+    "identifier": "redis.host",
+    "gold_chunk_uid": "8b32731c0803149b"
+  },
+  {
+    "id": "bare-redis.password",
+    "style": "bare",
+    "query": "redis.password",
+    "identifier": "redis.password",
+    "gold_chunk_uid": "8b32731c0803149b"
+  },
+  {
+    "id": "nat-redis.password",
+    "style": "natural",
+    "query": "How do I set redis.password?",
+    "identifier": "redis.password",
+    "gold_chunk_uid": "8b32731c0803149b"
+  },
+  {
+    "id": "bare-redis.port",
+    "style": "bare",
+    "query": "redis.port",
+    "identifier": "redis.port",
+    "gold_chunk_uid": "8b32731c0803149b"
+  },
+  {
+    "id": "nat-redis.port",
+    "style": "natural",
+    "query": "What is redis.port used for?",
+    "identifier": "redis.port",
+    "gold_chunk_uid": "8b32731c0803149b"
+  },
+  {
+    "id": "bare-resources.limits",
+    "style": "bare",
+    "query": "resources.limits",
+    "identifier": "resources.limits",
+    "gold_chunk_uid": "34f5d28c07fd297c"
+  },
+  {
+    "id": "nat-resources.limits",
+    "style": "natural",
+    "query": "What does resources.limits configure?",
+    "identifier": "resources.limits",
+    "gold_chunk_uid": "34f5d28c07fd297c"
+  },
+  {
+    "id": "bare-resources.requests",
+    "style": "bare",
+    "query": "resources.requests",
+    "identifier": "resources.requests",
+    "gold_chunk_uid": "34f5d28c07fd297c"
+  },
+  {
+    "id": "nat-resources.requests",
+    "style": "natural",
+    "query": "How do I set resources.requests?",
+    "identifier": "resources.requests",
+    "gold_chunk_uid": "34f5d28c07fd297c"
+  },
+  {
+    "id": "bare-support.example.com",
+    "style": "bare",
+    "query": "support.example.com",
+    "identifier": "support.example.com",
+    "gold_chunk_uid": "95d78991abd8f03d"
+  },
+  {
+    "id": "nat-support.example.com",
+    "style": "natural",
+    "query": "What is support.example.com used for?",
+    "identifier": "support.example.com",
+    "gold_chunk_uid": "95d78991abd8f03d"
+  },
+  {
+    "id": "bare-swagger.json",
+    "style": "bare",
+    "query": "swagger.json",
+    "identifier": "swagger.json",
+    "gold_chunk_uid": "d892633f3d14b86d"
+  },
+  {
+    "id": "nat-swagger.json",
+    "style": "natural",
+    "query": "What does swagger.json configure?",
+    "identifier": "swagger.json",
+    "gold_chunk_uid": "d892633f3d14b86d"
+  },
+  {
+    "id": "bare-web.hpa.cputhreshold",
+    "style": "bare",
+    "query": "web.hpa.cputhreshold",
+    "identifier": "web.hpa.cputhreshold",
+    "gold_chunk_uid": "7f8c2816f910f5ee"
+  },
+  {
+    "id": "nat-web.hpa.cputhreshold",
+    "style": "natural",
+    "query": "How do I set web.hpa.cputhreshold?",
+    "identifier": "web.hpa.cputhreshold",
+    "gold_chunk_uid": "7f8c2816f910f5ee"
+  },
+  {
+    "id": "bare-web.hpa.maxpods",
+    "style": "bare",
+    "query": "web.hpa.maxpods",
+    "identifier": "web.hpa.maxpods",
+    "gold_chunk_uid": "7f8c2816f910f5ee"
+  },
+  {
+    "id": "nat-web.hpa.maxpods",
+    "style": "natural",
+    "query": "What is web.hpa.maxpods used for?",
+    "identifier": "web.hpa.maxpods",
+    "gold_chunk_uid": "7f8c2816f910f5ee"
+  },
+  {
+    "id": "bare-web.hpa.minpods",
+    "style": "bare",
+    "query": "web.hpa.minpods",
+    "identifier": "web.hpa.minpods",
+    "gold_chunk_uid": "7f8c2816f910f5ee"
+  },
+  {
+    "id": "nat-web.hpa.minpods",
+    "style": "natural",
+    "query": "What does web.hpa.minpods configure?",
+    "identifier": "web.hpa.minpods",
+    "gold_chunk_uid": "7f8c2816f910f5ee"
+  },
+  {
+    "id": "bare-worker.hpa.cputhreshold",
+    "style": "bare",
+    "query": "worker.hpa.cputhreshold",
+    "identifier": "worker.hpa.cputhreshold",
+    "gold_chunk_uid": "7f8c2816f910f5ee"
+  },
+  {
+    "id": "nat-worker.hpa.cputhreshold",
+    "style": "natural",
+    "query": "How do I set worker.hpa.cputhreshold?",
+    "identifier": "worker.hpa.cputhreshold",
+    "gold_chunk_uid": "7f8c2816f910f5ee"
+  },
+  {
+    "id": "bare-worker.hpa.maxpods",
+    "style": "bare",
+    "query": "worker.hpa.maxpods",
+    "identifier": "worker.hpa.maxpods",
+    "gold_chunk_uid": "7f8c2816f910f5ee"
+  },
+  {
+    "id": "nat-worker.hpa.maxpods",
+    "style": "natural",
+    "query": "What is worker.hpa.maxpods used for?",
+    "identifier": "worker.hpa.maxpods",
+    "gold_chunk_uid": "7f8c2816f910f5ee"
+  },
+  {
+    "id": "bare-worker.hpa.minpods",
+    "style": "bare",
+    "query": "worker.hpa.minpods",
+    "identifier": "worker.hpa.minpods",
+    "gold_chunk_uid": "7f8c2816f910f5ee"
+  },
+  {
+    "id": "nat-worker.hpa.minpods",
+    "style": "natural",
+    "query": "What does worker.hpa.minpods configure?",
+    "identifier": "worker.hpa.minpods",
+    "gold_chunk_uid": "7f8c2816f910f5ee"
+  },
+  {
+    "id": "bare-x-7z-compressed",
+    "style": "bare",
+    "query": "x-7z-compressed",
+    "identifier": "x-7z-compressed",
+    "gold_chunk_uid": "507cb59cdb734218"
+  },
+  {
+    "id": "nat-x-7z-compressed",
+    "style": "natural",
+    "query": "How do I set x-7z-compressed?",
+    "identifier": "x-7z-compressed",
+    "gold_chunk_uid": "507cb59cdb734218"
+  },
+  {
+    "id": "bare-yourapp.herokuapp.com",
+    "style": "bare",
+    "query": "yourapp.herokuapp.com",
+    "identifier": "yourapp.herokuapp.com",
+    "gold_chunk_uid": "46cb7228438350c4"
+  },
+  {
+    "id": "nat-yourapp.herokuapp.com",
+    "style": "natural",
+    "query": "What is yourapp.herokuapp.com used for?",
+    "identifier": "yourapp.herokuapp.com",
+    "gold_chunk_uid": "46cb7228438350c4"
+  },
+  {
+    "id": "bare-yourdomain.com",
+    "style": "bare",
+    "query": "yourdomain.com",
+    "identifier": "yourdomain.com",
+    "gold_chunk_uid": "58080f245cc5a9b1"
+  },
+  {
+    "id": "nat-yourdomain.com",
+    "style": "natural",
+    "query": "What does yourdomain.com configure?",
+    "identifier": "yourdomain.com",
+    "gold_chunk_uid": "58080f245cc5a9b1"
+  }
+]

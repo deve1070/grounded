@@ -1,0 +1,40 @@
+{
+  "k": 5,
+  "n": 296,
+  "rrf_k": 60,
+  "identifier_boost": 2.0,
+  "identifier_detection_rate": {
+    "all": 1.0,
+    "bare": 1.0,
+    "natural": 1.0
+  },
+  "recall": {
+    "lexical": {
+      "all": 0.865,
+      "bare": 0.98,
+      "natural": 0.75
+    },
+    "vector": {
+      "all": 0.696,
+      "bare": 0.682,
+      "natural": 0.709
+    },
+    "hybrid": {
+      "all": 0.949,
+      "bare": 0.986,
+      "natural": 0.912
+    },
+    "exact": {
+      "all": 1.0,
+      "bare": 1.0,
+      "natural": 1.0
+    },
+    "fused": {
+      "all": 1.0,
+      "bare": 1.0,
+      "natural": 1.0
+    }
+  },
+  "note": "exact and fused are 1.0 BY CONSTRUCTION: gold is defined as the chunk containing identifier X, and the exact lane matches on that same array. Only lexical and vector are independent measurements.",
+  "misses": []
+}

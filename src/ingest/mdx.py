@@ -106,6 +106,12 @@ def strip_jsx(text: str) -> str:
     return text
 
 
+def same_heading(a: str, b: str) -> bool:
+    """Compare headings ignoring case, punctuation and backticks."""
+    norm = lambda s: re.sub(r"[^a-z0-9]+", " ", s.lower()).strip()
+    return bool(a) and bool(b) and norm(a) == norm(b)
+
+
 def build_tree(text: str, doc_title: str) -> Section:
     root = Section(level=0, heading=doc_title)
     stack = [root]
@@ -122,6 +128,13 @@ def build_tree(text: str, doc_title: str) -> Section:
 
         while len(stack) > 1 and stack[-1].level >= level:
             stack.pop()
+
+        # Many files repeat the frontmatter title as an H1, which would give
+        # breadcrumbs like "Common Errors > Common Errors". Fold a heading into
+        # its parent instead of nesting a duplicate node. Pop first, so the
+        # comparison is against the real parent at this level.
+        if same_heading(stack[-1].heading, heading):
+            continue
 
         section = Section(level=level, heading=heading)
         stack[-1].children.append(section)
