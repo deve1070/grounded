@@ -30,9 +30,21 @@ load_dotenv(ROOT / ".env")
 from src.ingest.embed import embed_cached, get_embedder
 
 CHUNKS = ROOT / "data" / "chunks.json"
-VECTORS = ROOT / "data" / "embeddings.npy"
-ORDER = ROOT / "data" / "embeddings_uids.json"
+# VECTORS = ROOT / "data" / "embeddings.npy"
+# ORDER = ROOT / "data" / "embeddings_uids.json"
 DSN = os.environ["DATABASE_URL"]
+# VECTORS = CHUNKS.with_name(CHUNKS.stem.replace("chunks", "embeddings") + ".npy")
+# ORDER = CHUNKS.with_name(CHUNKS.stem + "_uids.json")
+
+import argparse
+
+ap = argparse.ArgumentParser()
+ap.add_argument("--chunks", default="data/chunks.json")
+args = ap.parse_args()
+CHUNKS = ROOT / args.chunks
+   
+VECTORS = CHUNKS.with_name(CHUNKS.stem.replace("chunks", "embeddings") + ".npy")
+ORDER   = CHUNKS.with_name(CHUNKS.stem + "_uids.json")
 
 
 def embed_text(record: dict) -> str:

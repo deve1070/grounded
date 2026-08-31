@@ -23,6 +23,12 @@ from dotenv import load_dotenv
 
 load_dotenv(ROOT / ".env")
 DSN = os.environ["DATABASE_URL"]
+import argparse
+
+ap = argparse.ArgumentParser()
+ap.add_argument("--chunks", default="data/chunks.json")
+args = ap.parse_args()
+CHUNKS = ROOT / args.chunks
 
 UPSERT = """
 INSERT INTO chunks (chunk_uid, corpus, doc_path, breadcrumb, heading_level,
