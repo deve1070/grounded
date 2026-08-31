@@ -4,7 +4,7 @@ A support-deflection RAG agent that answers questions from a documentation
 set, cites the exact passage it used, and — measurably — says "I don't know"
 when the answer isn't there.
 
-**[Live demo](#)** · **[90-second walkthrough](#)**
+**https://grounded-dq3.pages.dev/** · \*\*\*\*
 
 Built as a technical case study, not a toy: everything below is a number I
 measured, not a number I expect. Where a design choice turned out to be
