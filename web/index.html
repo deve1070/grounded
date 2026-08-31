@@ -1,0 +1,633 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>grounded — a support agent that shows its sources</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400;12..96,600;12..96,800&family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans:wght@400;500;600&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      :root {
+        --ink: #141a23; /* deep blue-black, the text and the frame */
+        --ink-soft: #4a5566;
+        --paper: #eef1f4; /* cool paper, not cream */
+        --card: #ffffff;
+        --rule: #d4dae1;
+        --stub: #b4791f; /* citation amber — the colour of evidence */
+        --stub-wash: #fbf2e2;
+        --halt: #3c4b5f; /* refusal slate — deliberate, not alarming */
+        --display: "Bricolage Grotesque", system-ui, sans-serif;
+        --body: "IBM Plex Sans", system-ui, sans-serif;
+        --mono: "IBM Plex Mono", ui-monospace, monospace;
+      }
+      * {
+        box-sizing: border-box;
+      }
+      html,
+      body {
+        margin: 0;
+        padding: 0;
+      }
+      body {
+        background: var(--paper);
+        color: var(--ink);
+        font-family: var(--body);
+        font-size: 16px;
+        line-height: 1.55;
+        -webkit-font-smoothing: antialiased;
+      }
+      a {
+        color: inherit;
+      }
+      .wrap {
+        max-width: 1180px;
+        margin: 0 auto;
+        padding: 0 20px;
+      }
+
+      /* ---------- masthead ---------- */
+      header {
+        border-bottom: 1px solid var(--rule);
+        background: var(--card);
+      }
+      .mast {
+        display: flex;
+        align-items: baseline;
+        gap: 16px;
+        flex-wrap: wrap;
+        padding: 22px 0 18px;
+      }
+      .logo {
+        font-family: var(--display);
+        font-weight: 800;
+        font-size: 30px;
+        letter-spacing: -0.03em;
+        line-height: 1;
+        margin: 0;
+      }
+      .logo span {
+        color: var(--stub);
+      }
+      .tag {
+        font-size: 14px;
+        color: var(--ink-soft);
+        max-width: 46ch;
+      }
+      .corpus {
+        margin-left: auto;
+        font-family: var(--mono);
+        font-size: 12px;
+        color: var(--ink-soft);
+        border: 1px solid var(--rule);
+        border-radius: 2px;
+        padding: 5px 9px;
+        white-space: nowrap;
+      }
+      .corpus b {
+        color: var(--ink);
+        font-weight: 500;
+      }
+
+      /* ---------- two-column stage ---------- */
+      .stage {
+        display: grid;
+        grid-template-columns: 1fr 380px;
+        gap: 28px;
+        padding: 26px 0 60px;
+        align-items: start;
+      }
+      @media (max-width: 900px) {
+        .stage {
+          grid-template-columns: 1fr;
+          gap: 18px;
+        }
+      }
+
+      /* ---------- seeded questions ---------- */
+      .seed-label {
+        font-family: var(--mono);
+        font-size: 11px;
+        letter-spacing: 0.09em;
+        text-transform: uppercase;
+        color: var(--ink-soft);
+        margin: 0 0 9px;
+      }
+      .seeds {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 8px;
+        margin-bottom: 22px;
+      }
+      .seed {
+        font: inherit;
+        font-size: 14px;
+        background: var(--card);
+        border: 1px solid var(--rule);
+        border-radius: 2px;
+        padding: 8px 12px;
+        cursor: pointer;
+        text-align: left;
+        color: var(--ink);
+        transition:
+          border-color 0.15s,
+          transform 0.15s;
+      }
+      .seed:hover {
+        border-color: var(--ink);
+      }
+      .seed:active {
+        transform: translateY(1px);
+      }
+      .seed.halt {
+        border-style: dashed;
+        color: var(--halt);
+      }
+
+      /* ---------- thread ---------- */
+      .turn {
+        margin-bottom: 26px;
+      }
+      .q {
+        font-family: var(--display);
+        font-weight: 600;
+        font-size: 20px;
+        letter-spacing: -0.01em;
+        margin: 0 0 12px;
+        padding-left: 15px;
+        border-left: 3px solid var(--ink);
+      }
+      .a {
+        background: var(--card);
+        border: 1px solid var(--rule);
+        border-radius: 3px;
+        padding: 18px 20px;
+      }
+      .a p {
+        margin: 0 0 10px;
+      }
+      .a p:last-child {
+        margin-bottom: 0;
+      }
+
+      /* the signature: citations as numbered stubs you can pull */
+      .stub {
+        font-family: var(--mono);
+        font-size: 12px;
+        font-weight: 500;
+        background: var(--stub-wash);
+        color: var(--stub);
+        border: 1px solid #e4cf9e;
+        border-radius: 2px;
+        padding: 1px 6px;
+        margin: 0 1px;
+        cursor: pointer;
+        vertical-align: baseline;
+        transition: background 0.15s;
+      }
+      .stub:hover,
+      .stub[aria-current="true"] {
+        background: var(--stub);
+        color: #fff;
+        border-color: var(--stub);
+      }
+
+      /* refusal, designed as a result rather than an error */
+      .a.halt {
+        border-color: var(--halt);
+        border-left-width: 3px;
+        background: #f7f9fb;
+      }
+      .halt-mark {
+        font-family: var(--mono);
+        font-size: 11px;
+        letter-spacing: 0.11em;
+        text-transform: uppercase;
+        color: var(--halt);
+        border: 1px solid var(--halt);
+        border-radius: 2px;
+        padding: 2px 7px;
+        display: inline-block;
+        margin-bottom: 10px;
+      }
+      .halt-why {
+        font-size: 13px;
+        color: var(--ink-soft);
+        margin-top: 10px;
+      }
+
+      .meta {
+        font-family: var(--mono);
+        font-size: 11px;
+        color: var(--ink-soft);
+        margin-top: 14px;
+        padding-top: 11px;
+        border-top: 1px dotted var(--rule);
+        display: flex;
+        gap: 14px;
+        flex-wrap: wrap;
+      }
+
+      /* ---------- composer ---------- */
+      .composer {
+        display: flex;
+        gap: 8px;
+        margin-top: 8px;
+      }
+      .composer input {
+        flex: 1;
+        font: inherit;
+        padding: 12px 14px;
+        border: 1px solid var(--rule);
+        border-radius: 2px;
+        background: var(--card);
+        color: var(--ink);
+      }
+      .composer input:focus {
+        outline: 2px solid var(--stub);
+        outline-offset: 1px;
+        border-color: transparent;
+      }
+      .composer button {
+        font-family: var(--display);
+        font-weight: 600;
+        font-size: 15px;
+        background: var(--ink);
+        color: var(--paper);
+        border: 0;
+        border-radius: 2px;
+        padding: 0 22px;
+        cursor: pointer;
+      }
+      .composer button:disabled {
+        opacity: 0.45;
+        cursor: progress;
+      }
+
+      /* ---------- evidence rail ---------- */
+      .rail {
+        position: sticky;
+        top: 22px;
+      }
+      @media (max-width: 900px) {
+        .rail {
+          position: static;
+        }
+      }
+      .rail-head {
+        font-family: var(--mono);
+        font-size: 11px;
+        letter-spacing: 0.09em;
+        text-transform: uppercase;
+        color: var(--ink-soft);
+        margin: 0 0 9px;
+      }
+      .evidence {
+        background: var(--card);
+        border: 1px solid var(--rule);
+        border-radius: 3px;
+        padding: 16px;
+        min-height: 180px;
+      }
+      .trail {
+        font-family: var(--mono);
+        font-size: 11px;
+        color: var(--stub);
+        word-break: break-word;
+        margin-bottom: 10px;
+        line-height: 1.5;
+      }
+      .excerpt {
+        font-family: var(--mono);
+        font-size: 12.5px;
+        line-height: 1.65;
+        color: var(--ink);
+        white-space: pre-wrap;
+        max-height: 52vh;
+        overflow: auto;
+        margin: 0;
+      }
+      .rail-empty {
+        color: var(--ink-soft);
+        font-size: 14px;
+        margin: 0;
+      }
+
+      .uncited {
+        font-size: 12px;
+        color: var(--ink-soft);
+        margin-top: 12px;
+        padding-top: 10px;
+        border-top: 1px dotted var(--rule);
+      }
+      .uncited b {
+        font-weight: 500;
+        color: var(--ink);
+      }
+
+      /* ---------- notes ---------- */
+      .note {
+        font-size: 13px;
+        color: var(--ink-soft);
+        border-top: 1px solid var(--rule);
+        padding-top: 16px;
+        margin-top: 6px;
+      }
+      .dots::after {
+        content: "";
+        animation: dots 1.2s steps(4, end) infinite;
+      }
+      @keyframes dots {
+        0% {
+          content: "";
+        }
+        25% {
+          content: ".";
+        }
+        50% {
+          content: "..";
+        }
+        75% {
+          content: "...";
+        }
+      }
+      @media (prefers-reduced-motion: reduce) {
+        * {
+          animation-duration: 0s !important;
+          transition-duration: 0s !important;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <div class="wrap mast">
+        <h1 class="logo">ground<span>ed</span></h1>
+        <p class="tag">
+          Answers questions from a documentation set, cites the passage it used,
+          and says so when the answer isn't there.
+        </p>
+        <div class="corpus">
+          corpus <b id="corpus">…</b> · <b id="chunks">…</b> passages
+        </div>
+      </div>
+    </header>
+
+    <main class="wrap stage">
+      <section>
+        <p class="seed-label">Try one</p>
+        <div class="seeds" id="seeds"></div>
+        <div id="thread"></div>
+        <form class="composer" id="composer">
+          <input
+            id="q"
+            placeholder="Ask about the documentation…"
+            autocomplete="off"
+            minlength="3"
+            maxlength="1000"
+            required
+            aria-label="Your question"
+          />
+          <button id="send">Ask</button>
+        </form>
+        <p class="note" id="note">
+          Runs on free-tier infrastructure with a daily budget. Questions are
+          answered from the indexed passages only — nothing you type is stored.
+        </p>
+      </section>
+
+      <aside class="rail">
+        <p class="rail-head">Evidence</p>
+        <div class="evidence" id="evidence">
+          <p class="rail-empty">
+            Ask a question, then open a numbered citation to read the exact
+            passage the answer came from.
+          </p>
+        </div>
+      </aside>
+    </main>
+
+    <script>
+      const API =
+        location.hostname === "localhost" || location.hostname === "127.0.0.1"
+          ? "http://localhost:8000"
+          : "";
+
+      const SEEDS = [
+        { q: "How do I configure the SMTP settings for outgoing email?" },
+        { q: "What does FRONTEND_URL do?" },
+        { q: "How do I back up a self-hosted instance?" },
+        { q: "What is the refund policy for annual plans?", halt: true },
+      ];
+
+      const thread = document.getElementById("thread");
+      const evidence = document.getElementById("evidence");
+      let sources = {}; // stub id -> source record
+      let busy = false;
+
+      function el(tag, cls, text) {
+        const n = document.createElement(tag);
+        if (cls) n.className = cls;
+        if (text) n.textContent = text;
+        return n;
+      }
+
+      // Render the answer, converting [1] [2] markers into pullable stubs.
+      function renderAnswer(text, cites, key) {
+        const box = el("div");
+        text.split(/\n\s*\n/).forEach((para) => {
+          const p = el("p");
+          para.split(/(\[\d{1,2}\])/).forEach((bit) => {
+            const m = bit.match(/^\[(\d{1,2})\]$/);
+            if (!m) {
+              p.append(document.createTextNode(bit));
+              return;
+            }
+            const i = parseInt(m[1], 10) - 1;
+            const src = cites[i];
+            if (!src) {
+              p.append(document.createTextNode(bit));
+              return;
+            }
+            const id = key + ":" + i;
+            sources[id] = src;
+            const stub = el("button", "stub", m[1]);
+            stub.type = "button";
+            stub.setAttribute(
+              "aria-label",
+              "Show source " + m[1] + ": " + src.breadcrumb,
+            );
+            stub.onclick = () => showSource(id, stub);
+            p.append(stub);
+          });
+          box.append(p);
+        });
+        return box;
+      }
+
+      function showSource(id, stub) {
+        document
+          .querySelectorAll(".stub[aria-current]")
+          .forEach((s) => s.removeAttribute("aria-current"));
+        stub.setAttribute("aria-current", "true");
+        const src = sources[id];
+        evidence.replaceChildren(
+          el("p", "trail", src.breadcrumb),
+          el(
+            "pre",
+            "excerpt",
+            src.excerpt || "(passage text not returned by the API)",
+          ),
+        );
+        if (window.innerWidth <= 900)
+          evidence.scrollIntoView({ behavior: "smooth", block: "nearest" });
+      }
+
+      function addTurn(question) {
+        const turn = el("div", "turn");
+        turn.append(el("p", "q", question));
+        const body = el("div", "a");
+        body.append(el("p", "dots", "Searching the passages"));
+        turn.append(body);
+        thread.append(turn);
+        turn.scrollIntoView({ behavior: "smooth", block: "nearest" });
+        return body;
+      }
+
+      async function ask(question) {
+        if (busy) return;
+        busy = true;
+        document.getElementById("send").disabled = true;
+        const body = addTurn(question);
+        const key = "t" + thread.children.length;
+
+        try {
+          const res = await fetch(API + "/ask", {
+            method: "POST",
+            headers: { "Content-Type": "application/json" },
+            body: JSON.stringify({ question }),
+          });
+          const data = await res.json();
+
+          if (res.status === 429) {
+            body.className = "a halt";
+            body.replaceChildren(
+              el("span", "halt-mark", "daily budget spent"),
+              el("p", null, data.message),
+              el(
+                "p",
+                "halt-why",
+                "Free-tier quota resets each day. The recorded walkthrough shows the same flow end to end.",
+              ),
+            );
+            return;
+          }
+
+          const cited = (data.citations || []).filter((c) => c.cited);
+          const all = data.citations || [];
+
+          if (data.refused) {
+            body.className = "a halt";
+            body.replaceChildren(
+              el("span", "halt-mark", "not in the sources"),
+              el("p", null, data.answer),
+              el("p", "halt-why", reasonText(data.reason, all.length)),
+            );
+          } else {
+            body.className = "a";
+            body.replaceChildren(renderAnswer(data.answer, all, key));
+            const unused = all.length - cited.length;
+            if (unused > 0) {
+              const u = el("p", "uncited");
+              u.append(
+                document.createTextNode(
+                  "Retrieved " + all.length + " passages, used ",
+                ),
+              );
+              u.append(el("b", null, String(cited.length)));
+              u.append(
+                document.createTextNode(
+                  ". The rest weren't relevant enough to cite.",
+                ),
+              );
+              body.append(u);
+            }
+          }
+          body.append(metaLine(data.meta));
+        } catch (err) {
+          body.className = "a halt";
+          body.replaceChildren(
+            el("span", "halt-mark", "can't reach the service"),
+            el(
+              "p",
+              null,
+              "The API didn't respond. If you're running this locally, start the server with: uvicorn src.api.main:app",
+            ),
+          );
+        } finally {
+          busy = false;
+          document.getElementById("send").disabled = false;
+        }
+      }
+
+      function reasonText(reason, n) {
+        if (reason === "low_retrieval_score")
+          return "Nothing in the documentation came close enough to the question to be worth answering from.";
+        if (reason === "no_valid_citation")
+          return "A draft answer came back without a usable citation, so it was discarded rather than shown. Answers here must point at a passage.";
+        if (reason && reason.startsWith("providers_exhausted"))
+          return "The language model is rate limited right now. Retrieval still worked — the passages above are what it would have read.";
+        return (
+          "The " +
+          n +
+          " closest passages were checked and none of them contained the answer."
+        );
+      }
+
+      function metaLine(meta) {
+        const m = el("div", "meta");
+        if (!meta) return m;
+        m.append(el("span", null, (meta.latency_ms / 1000).toFixed(1) + "s"));
+        if (meta.provider) m.append(el("span", null, meta.provider));
+        if (meta.cached) m.append(el("span", null, "cached"));
+        if (meta.vector_lane === false)
+          m.append(el("span", null, "keyword search only"));
+        const tok = (meta.input_tokens || 0) + (meta.output_tokens || 0);
+        if (tok) m.append(el("span", null, tok + " tokens"));
+        return m;
+      }
+
+      // Seeded questions. The last one is deliberately unanswerable: refusing well
+      // is the thing worth demonstrating, so it gets a first-class button.
+      SEEDS.forEach((s) => {
+        const b = el("button", "seed" + (s.halt ? " halt" : ""), s.q);
+        b.type = "button";
+        b.onclick = () => ask(s.q);
+        document.getElementById("seeds").append(b);
+      });
+
+      document.getElementById("composer").addEventListener("submit", (e) => {
+        e.preventDefault();
+        const input = document.getElementById("q");
+        const v = input.value.trim();
+        if (v.length < 3) return;
+        input.value = "";
+        ask(v);
+      });
+
+      fetch(API + "/health")
+        .then((r) => r.json())
+        .then((d) => {
+          document.getElementById("corpus").textContent = d.corpus || "—";
+          document.getElementById("chunks").textContent = d.chunks ?? "—";
+        })
+        .catch(() => {
+          document.getElementById("corpus").textContent = "offline";
+          document.getElementById("chunks").textContent = "—";
+        });
+    </script>
+  </body>
+</html>
