@@ -7,7 +7,7 @@ services:
       POSTGRES_PASSWORD: grounded
       POSTGRES_DB: grounded
     ports:
-      - "5433:5432"
+      - "127.0.0.1:55432:5432"
     volumes:
       - pgdata:/var/lib/postgresql/data
       - ./db/init.sql:/docker-entrypoint-initdb.d/00-init.sql:ro
