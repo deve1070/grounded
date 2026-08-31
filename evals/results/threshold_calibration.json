@@ -1,0 +1,59 @@
+{
+  "corpus": "techqa",
+  "k": 5,
+  "lanes": "lexical+exact",
+  "n_chunks": 266,
+  "recall_at_k_answerable": 0.64,
+  "empty_result_queries": 0,
+  "score_distributions": {
+    "answerable": {
+      "n": 200,
+      "min": 0.01639,
+      "p25": 0.01639,
+      "median": 0.01639,
+      "p75": 0.01639,
+      "max": 0.04918
+    },
+    "impossible": {
+      "n": 100,
+      "min": 0.01639,
+      "p25": 0.01639,
+      "median": 0.01639,
+      "p75": 0.01639,
+      "max": 0.01639
+    }
+  },
+  "best": {
+    "threshold": 0.0164,
+    "answerable_kept": 0.02,
+    "impossible_refused": 1.0,
+    "balanced": 0.51
+  },
+  "sweep": [
+    {
+      "threshold": 0.0164,
+      "answerable_kept": 0.02,
+      "impossible_refused": 1.0,
+      "balanced": 0.51
+    },
+    {
+      "threshold": 0.0482,
+      "answerable_kept": 0.015,
+      "impossible_refused": 1.0,
+      "balanced": 0.507
+    },
+    {
+      "threshold": 0.0484,
+      "answerable_kept": 0.015,
+      "impossible_refused": 1.0,
+      "balanced": 0.507
+    },
+    {
+      "threshold": 0.0492,
+      "answerable_kept": 0.0,
+      "impossible_refused": 1.0,
+      "balanced": 0.5
+    }
+  ],
+  "note": "RRF scores scale with lane count; a threshold from one lane configuration does not transfer to another."
+}

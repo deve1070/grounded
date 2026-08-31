@@ -1,0 +1,21 @@
+{
+  "corpus": "techqa",
+  "k": 5,
+  "embedding_model": "bge-base-en-v1.5",
+  "n_answerable": 200,
+  "n_impossible": 100,
+  "recall": {
+    "lexical": 0.645,
+    "vector": 0.96,
+    "exact": 0.02,
+    "hybrid": 0.875,
+    "fused": 0.875
+  },
+  "false_hit_rate": {
+    "lexical": 1.0,
+    "vector": 1.0,
+    "exact": 0.0,
+    "hybrid": 1.0,
+    "fused": 1.0
+  }
+}
