@@ -14,6 +14,7 @@ __pycache__/
 /.vscode
 /.venv
 
+/data/.llm_cache/
 # Node (widget/, web/)
 node_modules/
 dist/

@@ -1,1 +1,0 @@
-{"text": "The changes are not reflected in the user interface because the issue is caused by Oracle bug\u202f17501296 in Oracle\u202f11.2.0.4.0, which prevents updates to a Notice Questionnaire Template or a Hold Notice from being displayed in IBM Atlas. [1]", "provider": "groq", "model": "openai/gpt-oss-20b", "input_tokens": 2584, "output_tokens": 127}
