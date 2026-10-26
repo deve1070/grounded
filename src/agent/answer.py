@@ -34,7 +34,7 @@ using the number shown in the source header.
 class Answer:
     text: str
     refused: bool
-
+    error: str | None = None
     reason: str = ""
     citations: list[str] = field(default_factory=list)
     hits: list[Hit] = field(default_factory=list)
