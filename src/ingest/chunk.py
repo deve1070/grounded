@@ -1,20 +1,3 @@
-"""Turn a heading tree into chunks.
-
-Rules (all thresholds are prose words; code placeholders count as 1):
-
-  * A section and all its descendants become ONE chunk if the total fits.
-  * Otherwise the section's own body becomes a chunk and children recurse.
-  * A single body over MAX_WORDS is hard-split on paragraph boundaries with
-    OVERLAP_SENTENCES of overlap.
-  * Any chunk under MIN_WORDS is merged forward into the next chunk in the
-    same document. `## Notes` on its own is retrieval noise.
-  * Code is never split — it is a placeholder token at this stage.
-
-Every chunk carries a breadcrumb, because this corpus has headings like
-`### Sent` and three separate `### Screencast Walkthrough` sections. The
-breadcrumb is both embedded text and the citation label shown to users.
-"""
-
 from __future__ import annotations
 
 import re

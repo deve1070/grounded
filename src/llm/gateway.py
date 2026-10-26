@@ -1,22 +1,3 @@
-"""Generation with provider failover and a semantic-free response cache.
-
-Free tiers are not an SLA. Gemini Flash is roughly 10 RPM / 250 RPD and Groq
-around 30 RPM / 1000 RPD, so a demo link a client opens in month six will hit
-a 429 sooner or later. The gateway makes that a routing event rather than an
-outage.
-
-Design:
-  * Providers are tried in order; a 429 or 5xx moves to the next one.
-  * Identical (prompt, model-tier) pairs are served from disk cache, so the
-    seeded demo questions cost nothing after the first visitor.
-  * When every provider is exhausted, raise AllProvidersExhausted. The caller
-    decides what the user sees -- the API turns it into the recorded-demo
-    fallback rather than a stack trace.
-
-Provider-agnostic failover is also the honest answer to "what happens when
-OpenAI goes down?", which is a question clients ask.
-"""
-
 from __future__ import annotations
 
 import asyncio
@@ -63,10 +44,6 @@ class Completion:
     output_tokens: int = 0
 
 
-# Model availability differs by API version and key type, so a hardcoded name
-# rots. Override with GEMINI_CHAT_MODEL after checking what your key can see:
-#   curl -s -H "x-goog-api-key: $GEMINI_API_KEY" \
-#     https://generativelanguage.googleapis.com/v1beta/models | grep '"name"'
 class GeminiChat:
     name = "gemini"
 
@@ -111,8 +88,6 @@ class GeminiChat:
         )
 
 
-# Groq deprecated the Llama chat models in June 2026. Overridable, because
-# this list keeps moving: check https://console.groq.com/docs/deprecations
 class GroqChat:
     name = "groq"
     URL = "https://api.groq.com/openai/v1/chat/completions"
@@ -194,9 +169,6 @@ class Gateway:
         """
         return hashlib.sha256(f"{model}\x00{system}\x00{user}".encode()).hexdigest()
 
-    # A retry-after of 800+ seconds is a daily cap, not a burst limit. Sleeping
-    # through it blocks the run for a quarter of an hour; better to fail this
-    # provider over and let the next one serve.
     MAX_RETRY_WAIT = 60
 
     async def _with_retry(
@@ -212,10 +184,6 @@ class Gateway:
             try:
                 return await provider.complete(system, user, max_tokens)
             except httpx.RequestError as exc:
-                # DNS failure, dropped connection, timeout. Transient and not
-                # an HTTP status, so it was previously uncaught and killed the
-                # whole run -- a home connection blip should cost one question,
-                # not an hour of eval.
                 if attempt == attempts - 1:
                     raise
                 print(
@@ -257,12 +225,7 @@ class Gateway:
                 result = await self._with_retry(provider, system, user, max_tokens)
             except httpx.HTTPStatusError as exc:
                 code = exc.response.status_code
-                # 429/5xx are transient. 400/401/403/404 mean this provider is
-                # misconfigured -- wrong model name, bad key, no access. Both
-                # are reasons to try the NEXT provider, not to kill the run: a
-                # failover lane that only survives rate limits is not a
-                # failover lane. Model deprecation is the outage a months-old
-                # demo actually hits.
+
                 if code in (400, 401, 403, 404, 413, 429, 500, 502, 503, 529):
                     if code not in (429, 500, 502, 503, 529):
                         print(

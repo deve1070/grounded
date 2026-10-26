@@ -1,12 +1,4 @@
 #!/usr/bin/env python
-"""Why is recall 0.000? Check each link in the chain separately.
-
-    uv run evals/diagnose_techqa.py
-
-recall@5 of exactly 0/200 is a broken join, not weak retrieval -- even a bad
-retriever gets some hits by luck. This isolates where it breaks.
-"""
-
 from __future__ import annotations
 
 import asyncio

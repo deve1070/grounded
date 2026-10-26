@@ -1,12 +1,4 @@
 #!/usr/bin/env python
-"""Load data/chunks.json into Postgres. Embeddings stay NULL at this stage.
-
-    uv run scripts/load_chunks.py
-
-Idempotent: re-running upserts on chunk_uid, so you can iterate on the
-chunker and reload without dropping the database.
-"""
-
 from __future__ import annotations
 
 import asyncio

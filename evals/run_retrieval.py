@@ -1,23 +1,4 @@
 #!/usr/bin/env python
-"""Measure recall@k with no embeddings and no API calls.
-
-    uv run evals/run_retrieval.py
-
-Three configurations, all free:
-
-  lexical   BM25 over the tsvector
-  exact     identifiers[] array match only
-  fused     RRF over both
-
-Query-side identifier detection matches tokens against the vocabulary
-extracted from the INDEXED CORPUS -- not from the eval questions. In
-production the vocabulary is built the same way, at ingestion time, so this
-is not leakage: an unknown token simply fails to match.
-
-When the vector lane lands, add it here so the delta is measured against a
-real baseline rather than reported in isolation.
-"""
-
 from __future__ import annotations
 
 import asyncio
@@ -65,8 +46,6 @@ WHERE identifiers && $1::text[]
 LIMIT $2
 """
 
-# <=> is cosine distance in pgvector. No ANN index at this scale: an exact
-# scan over ~200 rows is single-digit ms and gives exact recall.
 VECTOR_SQL = """
 SELECT chunk_uid
 FROM chunks

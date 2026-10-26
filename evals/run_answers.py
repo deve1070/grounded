@@ -1,29 +1,4 @@
 #!/usr/bin/env python
-"""Measure the answer layer: does Gate 2 catch what retrieval cannot refuse?
-
-    uv run evals/run_answers.py [--limit 60] [--corpus techqa]
-
-compare_lanes.py showed a false-hit rate of 1.000: all 100 unanswerable
-questions get confident-looking sources. Retrieval structurally cannot refuse.
-So the citation gate is the only thing between the system and 100 confident
-wrong answers. This measures whether it works.
-
-Four numbers, all from labels that already exist -- no LLM judge, so nothing
-here depends on a second model's opinion:
-
-  refusal rate      impossible questions correctly declined. THE headline.
-  false answer rate impossible questions answered anyway. Every one of these
-                    is a hallucination shipped to a user.
-  answer rate       answerable questions actually answered (over-refusal is a
-                    real cost too -- a bot that always declines is useless)
-  citation accuracy answered questions whose citations include a gold chunk.
-                    Catches answers that are right-looking but sourced from
-                    the wrong place.
-
-Start with --limit 60. It costs 60 calls and tells you whether the prompt
-works before you spend a full run on it.
-"""
-
 from __future__ import annotations
 
 import argparse
@@ -50,8 +25,7 @@ from src.retrieval.search import load_vocab, search
 QUESTIONS = ROOT / "evals" / "answers" / "techqa_questions.json"
 RESULTS = ROOT / "evals" / "results" / "answer_eval.json"
 DSN = os.environ["DATABASE_URL"]
-# Fewer, fuller chunks beat more truncated ones -- and on a token-limited free
-# tier, k is the cheapest lever on cost per question.
+
 K = int(os.getenv("RETRIEVAL_K", "3"))
 
 
@@ -121,9 +95,6 @@ async def main() -> int:
                     "cited_gold": bool(gold & set(result.citations)),
                     "gold_retrieved": bool(gold & {h.chunk_uid for h in hits}),
                     "latency_ms": elapsed,
-                    # Recorded per row, not assumed from the environment: an env
-                    # var that silently fails to take is exactly how three runs
-                    # got attributed to the wrong model.
                     "provider": result.provider,
                     "model": result.model,
                     "cached": result.cached,
@@ -137,10 +108,6 @@ async def main() -> int:
     finally:
         await conn.close()
 
-    # Provider failures are NOT refusals. A rate-limited run that scored
-    # every 429 as "the system declined" would report a perfect refusal rate
-    # while having answered almost nothing -- which is exactly what happened
-    # on the first attempt at this eval.
     errors = [r for r in records if r["error"]]
     scored = [r for r in records if not r["error"]]
     imp = [r for r in scored if r["impossible"]]
@@ -165,8 +132,7 @@ async def main() -> int:
     refused_imp = sum(r["refused"] for r in imp)
     answered_ans = sum(not r["refused"] for r in ans)
     cited_gold = sum(r["cited_gold"] for r in ans if not r["refused"])
-    # Over-refusal only counts where retrieval DID find the gold chunk --
-    # otherwise refusing was the correct call and the fault is retrieval's.
+
     recoverable = [r for r in ans if r["gold_retrieved"]]
     missed = sum(r["refused"] for r in recoverable)
 

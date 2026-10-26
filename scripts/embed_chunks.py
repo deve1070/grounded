@@ -1,16 +1,4 @@
 #!/usr/bin/env python
-"""Embed the corpus once, offline, and commit the result.
-
-    uv run --group ingest scripts/embed_chunks.py
-
-Writes data/embeddings.npy (~600 KB at 187x768 float32) and pushes the
-vectors into Postgres.
-
-The .npy is committed deliberately. It means the deployed demo boots with a
-populated index and zero API calls, so neither a wiped database nor an
-exhausted quota can take the flagship demo offline.
-"""
-
 from __future__ import annotations
 
 import asyncio
@@ -30,11 +18,9 @@ load_dotenv(ROOT / ".env")
 from src.ingest.embed import embed_cached, get_embedder
 
 CHUNKS = ROOT / "data" / "chunks.json"
-# VECTORS = ROOT / "data" / "embeddings.npy"
-# ORDER = ROOT / "data" / "embeddings_uids.json"
+
 DSN = os.environ["DATABASE_URL"]
-# VECTORS = CHUNKS.with_name(CHUNKS.stem.replace("chunks", "embeddings") + ".npy")
-# ORDER = CHUNKS.with_name(CHUNKS.stem + "_uids.json")
+
 
 import argparse
 
@@ -42,9 +28,9 @@ ap = argparse.ArgumentParser()
 ap.add_argument("--chunks", default="data/chunks.json")
 args = ap.parse_args()
 CHUNKS = ROOT / args.chunks
-   
+
 VECTORS = CHUNKS.with_name(CHUNKS.stem.replace("chunks", "embeddings") + ".npy")
-ORDER   = CHUNKS.with_name(CHUNKS.stem + "_uids.json")
+ORDER = CHUNKS.with_name(CHUNKS.stem + "_uids.json")
 
 
 def embed_text(record: dict) -> str:

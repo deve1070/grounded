@@ -1,27 +1,4 @@
 #!/usr/bin/env python
-"""Turn MIN_SCORE from a guess into a measured value.
-
-    uv run evals/calibrate_threshold.py [--no-vector] [--corpus techqa]
-
-MIN_SCORE = 0.028 was picked off the RRF formula, not from data. TechQA ships
-300 questions labelled is_impossible, so the threshold can be measured: sweep
-it, and at each value count how many answerable questions survive (good)
-against how many impossible ones get refused (also good).
-
-Gate 1 fires before generation, so calibrating it costs no LLM calls -- only
-query embeddings, which are cached. --no-vector skips those too.
-
-Reading the output
-------------------
-If the two score distributions overlap heavily, no retrieval-score cutoff
-separates them at ANY threshold, and the citation gate is doing the real work.
-That is a finding worth publishing, not a failure.
-
-Caveat on the number itself: RRF scores scale with how many lanes contribute,
-so a threshold measured with --no-vector does NOT transfer to a two-lane run.
-Only compare like with like.
-"""
-
 from __future__ import annotations
 
 import argparse
@@ -94,9 +71,6 @@ async def main() -> int:
             f"({n_emb} embedded), {len(questions)} questions"
         )
 
-        # Every lane must be scoped to this corpus. Without it, TechQA
-        # questions are answered from Chatwoot's docs and recall is 0 by
-        # construction -- which is exactly what happened before this fix.
         vocab = await load_vocab(conn, args.corpus)
 
         vectors: dict[str, str] = {}

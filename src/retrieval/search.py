@@ -1,19 +1,3 @@
-"""Hybrid retrieval: one implementation, used by both the API and the evals.
-
-The eval scripts had this SQL inline. That was fine for measuring, but it
-means the thing you measured and the thing you ship can drift apart -- the
-most common way a published eval number becomes a lie. From here both import
-this module.
-
-Lanes:
-  lexical   BM25 over the tsvector
-  vector    cosine over pgvector
-  exact     identifiers[] array match, boosted
-
-Measured recall@5 on 296 identifier queries: lexical 0.865, vector 0.696,
-hybrid (lexical+vector) 0.949.
-"""
-
 from __future__ import annotations
 
 import re
@@ -29,16 +13,6 @@ IDENT_BOOST = 2.0
 
 TOKEN_RE = re.compile(r"[A-Za-z0-9_.\-]+")
 
-# plainto_tsquery and websearch_to_tsquery both AND every lexeme together.
-# Fine for `redis.host`, but a 44-word support question then requires all ~30
-# surviving terms in one chunk and matches nothing -- measured as recall 0.000
-# on TechQA before this was fixed. ORing the lexemes lets ts_rank_cd do its
-# job: rank by how many terms match and how rare they are.
-#
-# Each lexeme is quote_literal'd because support text produces tokens like
-# `socketinputstream.java:140`, and a bare colon is tsquery weight syntax.
-# Unquoted, one stack trace in a question raises a syntax error and kills the
-# whole eval run.
 LEXICAL_SQL = """
 WITH q AS (
   SELECT array_to_string(
@@ -159,9 +133,7 @@ async def search(
         ]
 
     idents = detect_identifiers(query, vocab)
-    # Ordered by how few identifiers the chunk holds: a chunk mentioning one
-    # env var is a better answer for that var than a 40-row settings table
-    # that happens to include it.
+
     exact = (
         [
             r["chunk_uid"]

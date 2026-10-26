@@ -1,19 +1,3 @@
-"""Parse Mintlify MDX into a heading tree.
-
-Design notes
-------------
-Fenced code blocks are pulled out FIRST and replaced with placeholders. Two
-reasons:
-
-1. Deployment docs are full of bash comments like `# Install Chatwoot`. Without
-   this, those get parsed as H1 headings and the section tree is nonsense.
-2. Chunking then operates on prose-only word counts, and code can never be
-   split across a chunk boundary — it is a single opaque token until the very
-   last step.
-
-Placeholders are restored after chunking, in run_ingest.py.
-"""
-
 from __future__ import annotations
 
 import re
@@ -129,10 +113,6 @@ def build_tree(text: str, doc_title: str) -> Section:
         while len(stack) > 1 and stack[-1].level >= level:
             stack.pop()
 
-        # Many files repeat the frontmatter title as an H1, which would give
-        # breadcrumbs like "Common Errors > Common Errors". Fold a heading into
-        # its parent instead of nesting a duplicate node. Pop first, so the
-        # comparison is against the real parent at this level.
         if same_heading(stack[-1].heading, heading):
             continue
 

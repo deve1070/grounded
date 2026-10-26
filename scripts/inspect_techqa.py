@@ -1,21 +1,4 @@
 #!/usr/bin/env python
-"""Inspect TechQA-RAG-Eval before committing to an ingestion path.
-
-    uv run --group ingest scripts/inspect_techqa.py
-
-Deliberately schema-agnostic: it prints what is actually there rather than
-assuming field names. The three things that decide the ingestion design are
-
-  1. Where the document text lives -- inline per question, or a separate
-     corpus file. Inline means duplicated documents to dedupe on load.
-  2. How unanswerable questions are marked. These are what calibrate the
-     refusal threshold, so if they are not clearly flagged the dataset is
-     much less useful than advertised.
-  3. Corpus size. A few hundred docs slots into the existing chunks table
-     under a different `corpus` value; tens of thousands needs its own path
-     and probably an ANN index.
-"""
-
 from __future__ import annotations
 
 import json
@@ -76,7 +59,6 @@ def main() -> int:
     print("\n" + "=" * 60)
     print("LOOKING FOR UNANSWERABLE FLAGS")
     print("=" * 60)
-    # Any low-cardinality or boolean column is a candidate label.
     for col in df.columns:
         try:
             uniques = df[col].dropna().unique()
@@ -93,8 +75,9 @@ def main() -> int:
         if sample.map(lambda v: isinstance(v, str)).all():
             blank = sample.map(lambda v: not v.strip()).sum()
             if blank:
-                print(f"{col}: {blank}/200 blank strings "
-                      f"(possible unanswerable marker)")
+                print(
+                    f"{col}: {blank}/200 blank strings (possible unanswerable marker)"
+                )
 
     print("\n" + "=" * 60)
     print("DOCUMENT TEXT LOCATION")
@@ -103,12 +86,16 @@ def main() -> int:
         first = df[col].iloc[0]
         if isinstance(first, str) and len(first) > 500:
             lengths = df[col].map(lambda v: len(v) if isinstance(v, str) else 0)
-            print(f"{col}: long text, median {int(lengths.median())} chars "
-                  f"-- likely document body")
+            print(
+                f"{col}: long text, median {int(lengths.median())} chars "
+                f"-- likely document body"
+            )
         if isinstance(first, list) and first and isinstance(first[0], (dict, str)):
             counts = df[col].map(lambda v: len(v) if isinstance(v, list) else 0)
-            print(f"{col}: list per row, median {int(counts.median())} items "
-                  f"-- likely candidate documents")
+            print(
+                f"{col}: list per row, median {int(counts.median())} items "
+                f"-- likely candidate documents"
+            )
 
     out = "data/techqa_sample.json"
     df.head(3).to_json(out, orient="records", indent=2)

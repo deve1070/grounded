@@ -1,13 +1,3 @@
-"""Extract exact-match identifiers: env vars, config keys, CLI names.
-
-These are the retrieval gold in this corpus. Most appear exactly once across
-56k words, so BM25 and exact matching rank them decisively while a general
-embedder has essentially no representation of `SIDEKIQ_CONCURRENCY`.
-
-Run this AFTER code placeholders are restored — env vars live in the compose
-and bash blocks as much as in the prose.
-"""
-
 from __future__ import annotations
 
 import re
@@ -17,8 +7,7 @@ SCREAMING_RE = re.compile(r"\b([A-Z][A-Z0-9]*(?:_[A-Z0-9]+)+)\b")
 KEBAB_RE = re.compile(r"^[a-z][a-z0-9]*(?:-[a-z0-9]+)+$")
 DOTTED_RE = re.compile(r"^[a-z_][a-z0-9_]*(?:\.[a-z0-9_]+)+$")
 
-# Too generic to be useful as an exact-match signal — they would fire on
-# unrelated chunks and dilute the boost.
+
 BLOCKLIST = {
     "PASSWORD",
     "EMAIL",

@@ -21,6 +21,7 @@ dist/
 
 # Ingestion output — regenerable, noisy diffs
 data/chunks_preview.md
+data/.embed_cache
 
 # OS
 .DS_Storedata/.embed_cache/

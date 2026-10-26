@@ -1,13 +1,4 @@
 #!/usr/bin/env python
-"""Offline ingestion. No database, no embeddings, no API calls.
-
-    uv run --group ingest scripts/run_ingest.py
-
-Outputs:
-    data/chunks.json          machine-readable, feeds embedding + load
-    data/chunks_preview.md
-"""
-
 from __future__ import annotations
 
 import hashlib

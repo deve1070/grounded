@@ -1,22 +1,3 @@
-"""The answer contract: cite or refuse.
-
-Two independent gates, because they catch different failures.
-
-  Gate 1 -- retrieval confidence. If the best fused score is below
-  MIN_SCORE and no identifier was detected, we do not call the model at all.
-  Cheap (no tokens spent) and catches the clearly out-of-scope question.
-
-  Gate 2 -- citation presence. The model is instructed to mark every claim
-  with [chunk_uid]. If the reply contains no valid citation, we discard it and
-  refuse. This catches the dangerous case that Gate 1 cannot: retrieval
-  returned plausible-looking chunks, and the model answered from its own
-  pretraining instead of from them.
-
-Refusal is a feature, not a limitation. "I don't know, here is how to reach
-support" is what makes the rest of the answers trustworthy -- and it is the
-behaviour a buyer is actually screening for.
-"""
-
 from __future__ import annotations
 
 import os
@@ -28,22 +9,9 @@ from src.retrieval.search import Hit
 
 MIN_SCORE = 0.028  # ~ 1/(60+2): weak unless a lane ranked it near top
 
-# Prompt size has to be bounded. Five chunks of up to 800 words each is a
-# ~25 KB request, which Groq's free tier rejects outright with 413. Even where
-# it is accepted, an unbounded prompt means unpredictable latency and cost per
-# question -- both numbers a client asks about. Budget in characters rather
-# than tokens: no tokenizer dependency, and erring small is cheap.
-# Tokens-per-minute is usually the binding free-tier limit, not requests: a
-# 12k-char prompt is ~3k tokens, so even 8 requests/minute can exceed a 10k
-# TPM allowance. Shrinking the prompt buys more throughput than slowing down,
-# and it cuts cost per question at the same time.
+
 MAX_CONTEXT_CHARS = int(os.getenv("MAX_CONTEXT_CHARS", "6000"))
-MIN_CHUNK_CHARS = 400  # below this a chunk is too clipped to cite honestly
-# Sources are labelled [1], [2], [3] rather than by chunk_uid. A 16-character
-# hex id is a string models copy wrong -- they truncate it, alter a character,
-# or invent a plausible-looking one, and every such slip is scored as a
-# refusal even though the answer was correctly grounded. Small integers are
-# copied reliably, and the label maps back to a uid on our side.
+MIN_CHUNK_CHARS = 400
 CITATION_RE = re.compile(r"\[(\d{1,2})\]")
 
 REFUSAL_TEXT = (
@@ -66,10 +34,7 @@ using the number shown in the source header.
 class Answer:
     text: str
     refused: bool
-    # True when no answer was produced because the providers failed, not
-    # because the system judged the sources insufficient. Evals must exclude
-    # these rather than score them as refusals.
-    error: bool = False
+
     reason: str = ""
     citations: list[str] = field(default_factory=list)
     hits: list[Hit] = field(default_factory=list)
@@ -128,7 +93,6 @@ async def answer(
     if not hits:
         return _refuse("no_results", hits)
 
-    # Gate 1: retrieval confidence, before spending any tokens.
     if hits[0].score < min_score and not identifiers_found:
         return _refuse("low_retrieval_score", hits)
 
@@ -139,15 +103,13 @@ async def answer(
         return _refuse(f"providers_exhausted:{exc}", hits, error=True)
 
     text = completion.text.strip()
-    # Map the numeric labels the model used back to chunk uids, ignoring any
-    # number outside the range we actually showed it.
+
     cited = []
     for label in CITATION_RE.findall(text):
         index = int(label) - 1
         if 0 <= index < len(used):
             cited.append(used[index].chunk_uid)
 
-    # Gate 2: the model must ground its answer in the sources we gave it.
     if text.upper().startswith("NO_ANSWER") or not cited:
         reason = (
             "model_declined"

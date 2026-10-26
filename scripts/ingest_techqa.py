@@ -1,28 +1,4 @@
 #!/usr/bin/env python
-"""Ingest TechQA-RAG-Eval as a second corpus.
-
-    uv run --group ingest scripts/ingest_techqa.py [--limit N]
-
-Writes data/techqa_chunks.json (same shape as chunks.json, corpus='techqa')
-and evals/answers/techqa_questions.json.
-
-Why pooling matters
--------------------
-Each row ships only its own gold document, so retrieval within a row is
-trivial. Pooling all 496 unique documents into one index makes it a real task:
-find the right document among 496.
-
-Pooling also rescues the 300 impossible questions, which carry no contexts of
-their own. Asked against the pooled corpus, retrieval still returns its five
-most similar documents -- confident-looking, non-answering results. That is
-the HARD refusal case, and it is what calibrates the threshold: the system
-must decline despite plausible retrieval.
-
-Known labelling risk, stated plainly because it belongs in the writeup: a
-question marked impossible for its own row might be answerable from some
-other row's document in the pool. Spot-check a sample before publishing a
-refusal number.
-"""
 
 from __future__ import annotations
 
@@ -47,9 +23,7 @@ CHUNKS_OUT = ROOT / "data" / "techqa_chunks.json"
 QUESTIONS_OUT = ROOT / "evals" / "answers" / "techqa_questions.json"
 CORPUS = "techqa"
 
-# One document is 27k words -- an outlier that would dominate the corpus and
-# blow the embedding budget. Truncate rather than drop: its gold answer is
-# almost certainly near the top of the article.
+
 MAX_DOC_WORDS = 4000
 
 TITLE_RE = re.compile(r"^Title:\s*(.+)$", re.MULTILINE)
@@ -156,8 +130,6 @@ def main() -> int:
                 "reference_answer": row["answer"],
                 "is_impossible": bool(row["is_impossible"]),
                 "gold_docs": names,
-                # Any chunk of the gold document counts as a hit: the document is
-                # the labelled unit, not our chunk boundaries.
                 "gold_chunk_uids": [u for n in names for u in gold.get(n, [])],
             }
         )

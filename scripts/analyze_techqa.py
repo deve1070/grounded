@@ -1,27 +1,4 @@
 #!/usr/bin/env python
-"""Second pass on TechQA-RAG-Eval: decide the ingestion design.
-
-    uv run --group ingest scripts/analyze_techqa.py
-
-The first pass gave us the schema. The open questions now are the ones that
-change what we build:
-
-  * Pooling. Each row ships only its own gold document, so retrieval within a
-    row is trivial. The corpus only becomes a real retrieval task if every
-    row's contexts are pooled into one index -- then finding the right doc
-    among ~900 is genuine work. How many unique documents does that give?
-
-  * The impossible rows. If an unanswerable question still carries a context,
-    that context is related-but-not-answering. That is the hard refusal case
-    and exactly what calibrates the threshold: retrieval WILL return something
-    plausible and the system must still decline. If impossible rows have no
-    contexts at all, they only exercise the easy path.
-
-  * Document length. These look short (~1.3k chars). If most fit under the
-    chunk ceiling, ingestion is one-chunk-per-document and the MDX chunker is
-    not needed at all.
-"""
-
 from __future__ import annotations
 
 import statistics

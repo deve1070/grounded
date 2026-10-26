@@ -1,19 +1,4 @@
 #!/usr/bin/env python
-"""Lane-by-lane recall on TechQA. The table that goes in the README.
-
-    uv run evals/compare_lanes.py [--corpus techqa]
-
-calibrate_threshold.py measures the fused system. This measures each lane
-alone and then the fusion, so the contribution of each is visible instead of
-assumed -- the same comparison that showed vector losing everywhere on
-Chatwoot yet still lifting the fused score.
-
-Impossible questions are reported separately as "false-hit rate": the share
-where retrieval returned something at all. There is no gold chunk for them,
-so any confident result is a chance for the generator to hallucinate, and
-this is the number Gate 2 has to survive.
-"""
-
 from __future__ import annotations
 
 import argparse

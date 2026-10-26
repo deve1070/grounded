@@ -1,21 +1,4 @@
 #!/usr/bin/env python
-"""Build a retrieval eval set from identifiers that appear in exactly one chunk.
-
-    uv run --group ingest scripts/gen_retrieval_eval.py
-
-No LLM, no labeling: if `SIDEKIQ_CONCURRENCY` occurs in one chunk only, that
-chunk is the gold answer for any question about it, by construction.
-
-Two query styles per identifier, because they stress retrieval differently:
-
-  bare      "SIDEKIQ_CONCURRENCY"
-            What users actually type. Trivial for exact match, near-useless
-            for embeddings — this is where the hybrid gap shows.
-
-  natural   "What does SIDEKIQ_CONCURRENCY configure?"
-            Surrounding prose gives the vector lane something to work with,
-            so the gap should narrow. If it doesn't, that is a finding.
-"""
 
 from __future__ import annotations
 

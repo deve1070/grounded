@@ -1,28 +1,3 @@
-"""Embedding with an on-disk cache and a client-side rate limiter.
-
-Three things matter under a free-tier quota:
-
-1. **Never pay for the same text twice.** Every embedding is cached by
-   sha256(model|task_type|text). Re-running the eval 20 times costs one round
-   of API calls, not twenty.
-
-2. **Pace requests, don't just retry them.** Free tier for Gemini Embedding is
-   roughly 100 RPM / 30k TPM / 1000 RPD. A burst of 187 requests blows the
-   per-minute window instantly, and exponential backoff after the fact just
-   wastes wall-clock time. A token bucket keeps us under the limit in the
-   first place; backoff is the fallback, not the strategy.
-
-   Note also that batchEmbedContents carries its OWN much smaller per-region
-   quota than embedContent, which is why this uses single calls.
-
-3. **Asymmetric task types.** Documents embed with RETRIEVAL_DOCUMENT and
-   queries with RETRIEVAL_QUERY. Gemini trains these as distinct objectives;
-   using one type for both is a quiet accuracy loss.
-
-The API key travels in the x-goog-api-key header, never a query parameter --
-query strings leak into tracebacks, proxy logs and shell history.
-"""
-
 from __future__ import annotations
 
 import asyncio
@@ -43,8 +18,7 @@ CACHE_DIR = Path(__file__).resolve().parents[2] / "data" / ".embed_cache"
 class Embedder(Protocol):
     model: str
 
-    async def embed(self, texts: list[str], task_type: str) -> list[list[float]]:
-        ...
+    async def embed(self, texts: list[str], task_type: str) -> list[list[float]]: ...
 
 
 def _key(model: str, task_type: str, text: str) -> str:
@@ -80,11 +54,9 @@ class RateLimiter:
 
 class GeminiEmbedder:
     model = "gemini-embedding-001"
-    URL = ("https://generativelanguage.googleapis.com/v1beta/"
-           "models/{model}:embedContent")
+    URL = "https://generativelanguage.googleapis.com/v1beta/models/{model}:embedContent"
 
-    def __init__(self, api_key: str | None = None,
-                 rpm: int | None = None) -> None:
+    def __init__(self, api_key: str | None = None, rpm: int | None = None) -> None:
         self.api_key = api_key or os.environ["GEMINI_API_KEY"]
         # Deliberately below the documented 100 RPM: TPM (~30k) usually binds
         # first on chunks this size, and headroom is cheaper than a stall.
@@ -101,18 +73,18 @@ class GeminiEmbedder:
                     print(f"    {i}/{len(texts)}")
         return out
 
-    async def _one(self, client: httpx.AsyncClient, text: str,
-                   task_type: str, attempt: int = 0) -> list[float]:
+    async def _one(
+        self, client: httpx.AsyncClient, text: str, task_type: str, attempt: int = 0
+    ) -> list[float]:
         payload = {
             "model": f"models/{self.model}",
             "content": {"parts": [{"text": text}]},
             "taskType": task_type,
             "outputDimensionality": DIM,
         }
-        resp = await client.post(self.URL.format(model=self.model),
-                                 json=payload)
+        resp = await client.post(self.URL.format(model=self.model), json=payload)
         if resp.status_code == 429 and attempt < 6:
-            wait = float(resp.headers.get("retry-after", 0)) or 2 ** attempt * 5
+            wait = float(resp.headers.get("retry-after", 0)) or 2**attempt * 5
             print(f"    429 -- waiting {wait:.0f}s (attempt {attempt + 1})")
             await asyncio.sleep(wait)
             return await self._one(client, text, task_type, attempt + 1)
@@ -143,14 +115,15 @@ class LocalEmbedder:
 
     def __init__(self) -> None:
         from sentence_transformers import SentenceTransformer
+
         self._m = SentenceTransformer(f"BAAI/{self.model}")
 
     async def embed(self, texts: list[str], task_type: str) -> list[list[float]]:
         if task_type == "RETRIEVAL_QUERY":
             texts = [self.QUERY_PREFIX + t for t in texts]
-        vectors = self._m.encode(texts, batch_size=16,
-                                 normalize_embeddings=True,
-                                 show_progress_bar=True)
+        vectors = self._m.encode(
+            texts, batch_size=16, normalize_embeddings=True, show_progress_bar=True
+        )
         return [v.tolist() for v in vectors]
 
 
@@ -162,15 +135,21 @@ class HashEmbedder:
     async def embed(self, texts: list[str], task_type: str) -> list[list[float]]:
         out = []
         for text in texts:
-            seed = int(hashlib.sha256(f"{task_type}|{text}".encode())
-                       .hexdigest()[:16], 16)
+            seed = int(
+                hashlib.sha256(f"{task_type}|{text}".encode()).hexdigest()[:16], 16
+            )
             v = np.random.default_rng(seed).normal(size=DIM)
             out.append((v / np.linalg.norm(v)).tolist())
         return out
 
 
-async def embed_cached(embedder: Embedder, texts: list[str], task_type: str,
-                       cache: Cache | None = None, label: str = "") -> np.ndarray:
+async def embed_cached(
+    embedder: Embedder,
+    texts: list[str],
+    task_type: str,
+    cache: Cache | None = None,
+    label: str = "",
+) -> np.ndarray:
     """Embed texts, hitting the API only for cache misses.
 
     Fresh vectors are written to the cache as they arrive, so an interrupted
