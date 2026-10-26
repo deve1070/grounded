@@ -67,13 +67,14 @@ async def seed_if_empty(conn: asyncpg.Connection) -> None:
 
 @asynccontextmanager
 async def lifespan(app: FastAPI):
-    # pool = await asyncpg.create_pool(DSN, min_size=1, max_size=3)
-    pool = await asyncpg.create_pool(
-        DSN,
-        min_size=1,
-        max_size=3,
-        ssl="require",
-    )
+    pool = await asyncpg.create_pool(DSN, min_size=1, max_size=3)
+    # pool = await asyncpg.create_pool(
+    #     DSN,
+    #     min_size=1,
+    #     max_size=3,
+    #     ssl="require",
+    # )
+
     async with pool.acquire() as conn:
         await seed_if_empty(conn)
         state["vocab"] = await load_vocab(conn, DEMO_CORPUS)
